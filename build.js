@@ -2,12 +2,11 @@ const esbuild = require('esbuild');
 
 const isWatch = process.argv.includes('--watch');
 
-
 const buildOptions = {
   entryPoints: ['index.js'],
   bundle: true,
   outdir: 'dist',
-  entryNames: '[name]',
+  entryNames: 'bundle',
   format: 'esm',
   jsx: 'automatic',
   loader: {
@@ -17,32 +16,25 @@ const buildOptions = {
   },
   external: ['react', 'react-dom']
 };
-// const buildOptions = {
-//   entryPoints: ['index.js'],
-//   bundle: true,
-//   outfile: 'dist/bundle.js',
-//   format: 'esm',
-//   jsx: 'automatic',
-//   define: {
-//     'process.env.NODE_ENV': '"production"'
-//   },
-//   alias: {
-//     'react': 'https://esm.sh/react@18',
-//     'react-dom': 'https://esm.sh/react-dom@18'
-//   },
-//   loader: {
-//     '.jsx': 'jsx',
-//     '.js': 'jsx',
-//     '.css': 'css'
-//   },
-//   external: ['https://esm.sh/*']
-// };
 
-if (isWatch) {
-  esbuild.context(buildOptions).then(ctx => {
-    ctx.watch();
+async function build() {
+  if (isWatch) {
+    const ctx = await esbuild.context(buildOptions);
+    await ctx.watch();
     console.log('👀 Watching for changes...');
-  }).catch(() => process.exit(1));
-} else {
-  esbuild.build(buildOptions).catch(() => process.exit(1));
+    
+    // Keep the process alive
+    process.on('SIGINT', async () => {
+      await ctx.dispose();
+      process.exit(0);
+    });
+  } else {
+    await esbuild.build(buildOptions);
+    console.log('✅ Build complete!');
+  }
 }
+
+build().catch((error) => {
+  console.error('Build failed:', error);
+  process.exit(1);
+});
