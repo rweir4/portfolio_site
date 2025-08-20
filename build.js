@@ -3,7 +3,7 @@ const esbuild = require('esbuild');
 const isWatch = process.argv.includes('--watch');
 
 const buildOptions = {
-  entryPoints: ['index.js'],
+  entryPoints: ['src/index.js'],
   bundle: true,
   outdir: 'dist',
   entryNames: 'bundle',
@@ -14,7 +14,10 @@ const buildOptions = {
     '.js': 'jsx',
     '.css': 'css'
   },
-  external: ['react', 'react-dom']
+  external: ['react', 'react-dom'],
+  // Force CSS to be extracted to a separate file
+  write: true,
+  outExtension: { '.css': '.css' }
 };
 
 async function build() {
