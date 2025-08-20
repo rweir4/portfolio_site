@@ -24,7 +24,7 @@ var Hero = class extends React.Component {
         /* @__PURE__ */ jsx("br", {}),
         "I'm a software engineer."
       ] }),
-      /* @__PURE__ */ jsx("p", { className: "hero-subtitle", children: "I have 7+ years of experience building scalable applications at Medidata Solutions, Vimeo, and leading teams." }),
+      /* @__PURE__ */ jsx("p", { className: "hero-subtitle", children: "I have 7+ years of experience building scalable applications at Medidata Solutions, Vimeo, and leading teams and projects." }),
       /* @__PURE__ */ jsx("p", { className: "hero-description", children: "I value clarity, innovation, and collaboration above all else. These ideals guide my approach to problem solving and engineering excellence." })
     ] }) });
   }

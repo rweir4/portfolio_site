@@ -32,7 +32,7 @@ class Hero extends React.Component {
           </h1>
           <p className="hero-subtitle">
             I have 7+ years of experience building scalable applications at Medidata Solutions, 
-            Vimeo, and leading teams.
+            Vimeo, and leading teams and projects.
           </p>
           <p className="hero-description">
             I value clarity, innovation, and collaboration above all else. These 
