@@ -26,9 +26,9 @@ class Hero extends React.Component {
       <section className="hero">
         <div className="hero-content">
           <h1 className="hero-title">
-            Hello, I'm Rebecca.
+            Hello, I'm Rebecca Weir.
             <br />
-            I'm a software engineer.
+            I'm a full-stack software engineer.
           </h1>
           <p className="hero-subtitle">
             I have 7+ years of experience building scalable applications at Medidata Solutions, 
@@ -231,9 +231,6 @@ class Contact extends React.Component {
               </a>
               <a href="https://www.linkedin.com/in/rebeccalweir/" className="contact-link">
                 LinkedIn Profile
-              </a>
-              <a href="tel:865-719-7773" className="contact-link">
-                865-719-7773
               </a>
             </div>
           </div>

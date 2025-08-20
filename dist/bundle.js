@@ -20,9 +20,9 @@ var Hero = class extends React.Component {
   render() {
     return /* @__PURE__ */ jsx("section", { className: "hero", children: /* @__PURE__ */ jsxs("div", { className: "hero-content", children: [
       /* @__PURE__ */ jsxs("h1", { className: "hero-title", children: [
-        "Hello, I'm Rebecca.",
+        "Hello, I'm Rebecca Weir.",
         /* @__PURE__ */ jsx("br", {}),
-        "I'm a software engineer."
+        "I'm a full-stack software engineer."
       ] }),
       /* @__PURE__ */ jsx("p", { className: "hero-subtitle", children: "I have 7+ years of experience building scalable applications at Medidata Solutions, Vimeo, and leading teams and projects." }),
       /* @__PURE__ */ jsx("p", { className: "hero-description", children: "I value clarity, innovation, and collaboration above all else. These ideals guide my approach to problem solving and engineering excellence." })
@@ -175,8 +175,7 @@ var Contact = class extends React.Component {
         /* @__PURE__ */ jsx("p", { className: "contact-description", children: "I'm always interested in discussing new opportunities, innovative projects, or just chatting about technology." }),
         /* @__PURE__ */ jsxs("div", { className: "contact-links", children: [
           /* @__PURE__ */ jsx("a", { href: "mailto:rebeccaweir12@gmail.com", className: "contact-link", children: "rebeccaweir12@gmail.com" }),
-          /* @__PURE__ */ jsx("a", { href: "https://www.linkedin.com/in/rebeccalweir/", className: "contact-link", children: "LinkedIn Profile" }),
-          /* @__PURE__ */ jsx("a", { href: "tel:865-719-7773", className: "contact-link", children: "865-719-7773" })
+          /* @__PURE__ */ jsx("a", { href: "https://www.linkedin.com/in/rebeccalweir/", className: "contact-link", children: "LinkedIn Profile" })
         ] })
       ] })
     ] }) });
