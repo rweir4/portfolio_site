@@ -31,8 +31,8 @@ class Hero extends React.Component {
             I'm a software engineer.
           </h1>
           <p className="hero-subtitle">
-            I have 6+ years of experience building scalable applications at Medidata Solutions, 
-            Vimeo, and leading clinical trial technology teams.
+            I have 7+ years of experience building scalable applications at Medidata Solutions, 
+            Vimeo, and leading teams.
           </p>
           <p className="hero-description">
             I value clarity, innovation, and collaboration above all else. These 
