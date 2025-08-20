@@ -150,7 +150,7 @@ var About = class extends React.Component {
   render() {
     return /* @__PURE__ */ jsx("section", { id: "about", className: "about", children: /* @__PURE__ */ jsx("div", { className: "container", children: /* @__PURE__ */ jsx("div", { className: "about-content", children: /* @__PURE__ */ jsxs("div", { className: "about-text", children: [
       /* @__PURE__ */ jsx("h2", { className: "section-title", children: "About Rebecca" }),
-      /* @__PURE__ */ jsx("p", { children: "I'm a software engineer with 6+ years of experience building scalable, user-focused applications. My background in Biochemistry and Cellular and Molecular Biology from the University of Tennessee gives me a unique analytical perspective on complex technical challenges." }),
+      /* @__PURE__ */ jsx("p", { children: "I'm a software engineer with 7+ years of experience building scalable, user-focused applications. My background in Biochemistry and Cellular and Molecular Biology from the University of Tennessee gives me a unique analytical perspective on complex technical challenges." }),
       /* @__PURE__ */ jsx("p", { children: "I've had the privilege of working at innovative companies like Vimeo and Medidata Solutions, where I've led teams, mentored engineers, and delivered systems that serve millions of users. I'm passionate about clean architecture, performance optimization, and creating technology that makes a real difference." }),
       /* @__PURE__ */ jsxs("div", { className: "credentials", children: [
         /* @__PURE__ */ jsxs("div", { className: "education", children: [

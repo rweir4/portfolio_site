@@ -182,7 +182,7 @@ class About extends React.Component {
             <div className="about-text">
               <h2 className="section-title">About Rebecca</h2>
               <p>
-                I'm a software engineer with 6+ years of experience building scalable, 
+                I'm a software engineer with 7+ years of experience building scalable, 
                 user-focused applications. My background in Biochemistry and Cellular and 
                 Molecular Biology from the University of Tennessee gives me a unique 
                 analytical perspective on complex technical challenges.
