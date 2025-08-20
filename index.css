@@ -13,7 +13,7 @@ body {
 }
 
 .portfolio {
-  background: linear-gradient(135deg, #FF3366 0%, #FF6B9D 25%, #C44C9A 50%, #8B5A9B 75%, #6366F1 100%);
+  background: linear-gradient(135deg, #62dff0 0%, #FF6B9D 25%, #C44C9A 50%, #8B5A9B 75%, #6366F1 100%);
   min-height: 100vh;
 }
 
