@@ -68,7 +68,7 @@ const ProjectHighlight = ({ title, company, period, description, tech }) => {
   );
 }
 
-export const Experience = () => {
+const Experience = () => {
   return (
     <section id="work" className="experience">
       <div className="container">
@@ -120,3 +120,5 @@ export const Experience = () => {
     </section>
   );
 }
+
+export default Experience;

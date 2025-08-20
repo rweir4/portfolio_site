@@ -119,84 +119,78 @@ var Experience = () => {
     ] }, index)) })
   ] }) });
 };
+var Experience_default = Experience;
+
+// src/components/Contact.jsx
+import { jsx as jsx2, jsxs as jsxs2 } from "react/jsx-runtime";
+var Contact = () => /* @__PURE__ */ jsx2("section", { id: "contact", className: "contact", children: /* @__PURE__ */ jsxs2("div", { className: "container", children: [
+  /* @__PURE__ */ jsx2("h2", { className: "section-title", children: "Let's Connect" }),
+  /* @__PURE__ */ jsxs2("div", { className: "contact-content", children: [
+    /* @__PURE__ */ jsx2("p", { className: "contact-description", children: "I'm always interested in discussing new opportunities, innovative projects, or just chatting about technology." }),
+    /* @__PURE__ */ jsxs2("div", { className: "contact-links", children: [
+      /* @__PURE__ */ jsx2("a", { href: "mailto:rebeccaweir12@gmail.com", className: "contact-link", children: "rebeccaweir12@gmail.com" }),
+      /* @__PURE__ */ jsx2("a", { href: "https://www.linkedin.com/in/rebeccalweir/", className: "contact-link", children: "LinkedIn Profile" }),
+      /* @__PURE__ */ jsx2("a", { href: "https://github.com/rweir4", className: "contact-link", children: "Github Profile" })
+    ] })
+  ] })
+] }) });
+var Contact_default = Contact;
+
+// src/components/About.jsx
+import { jsx as jsx3, jsxs as jsxs3 } from "react/jsx-runtime";
+var About = () => /* @__PURE__ */ jsx3("section", { id: "about", className: "about", children: /* @__PURE__ */ jsx3("div", { className: "container", children: /* @__PURE__ */ jsx3("div", { className: "about-content", children: /* @__PURE__ */ jsxs3("div", { className: "about-text", children: [
+  /* @__PURE__ */ jsx3("h2", { className: "section-title", children: "About Rebecca" }),
+  /* @__PURE__ */ jsx3("p", { children: "I'm a software engineer with 7+ years of experience building scalable, user-focused applications. My background in Biochemistry and Cellular and Molecular Biology from the University of Tennessee gives me a unique analytical perspective on complex technical challenges." }),
+  /* @__PURE__ */ jsx3("p", { children: "I've had the privilege of working at innovative companies like Vimeo and Medidata Solutions, where I've led teams, mentored engineers, and delivered systems that serve millions of users. I'm passionate about clean architecture, performance optimization, and creating technology that makes a real difference." }),
+  /* @__PURE__ */ jsxs3("div", { className: "credentials", children: [
+    /* @__PURE__ */ jsxs3("div", { className: "education", children: [
+      /* @__PURE__ */ jsx3("h3", { children: "Education" }),
+      /* @__PURE__ */ jsx3("p", { children: "Bachelor of Science in Biochemistry And Cellular And Molecular Biology" }),
+      /* @__PURE__ */ jsx3("p", { children: "University of Tennessee, Knoxville, TN" })
+    ] }),
+    /* @__PURE__ */ jsxs3("div", { className: "awards", children: [
+      /* @__PURE__ */ jsx3("h3", { children: "Recognition" }),
+      /* @__PURE__ */ jsx3("p", { children: "Encore Award - For exceptional contribution to a high-impact, time-sensitive project" }),
+      /* @__PURE__ */ jsx3("p", { children: "Pendo Partner Certification - Software management platform expertise" })
+    ] })
+  ] })
+] }) }) }) });
+var About_default = About;
+
+// src/components/Hero.jsx
+import { jsx as jsx4, jsxs as jsxs4 } from "react/jsx-runtime";
+var Hero = () => /* @__PURE__ */ jsx4("section", { className: "hero", children: /* @__PURE__ */ jsxs4("div", { className: "hero-content", children: [
+  /* @__PURE__ */ jsxs4("h1", { className: "hero-title", children: [
+    "Hello, I'm Rebecca Weir.",
+    /* @__PURE__ */ jsx4("br", {}),
+    "I'm a full-stack software engineer."
+  ] }),
+  /* @__PURE__ */ jsx4("p", { className: "hero-subtitle", children: "I have 7+ years of experience building scalable applications at Medidata Solutions, Vimeo, and leading teams and projects." }),
+  /* @__PURE__ */ jsx4("p", { className: "hero-description", children: "I value clarity, innovation, and collaboration above all else. These ideals guide my approach to problem solving and engineering excellence." })
+] }) });
+var Hero_default = Hero;
 
 // src/App.jsx
-import { jsx as jsx2, jsxs as jsxs2 } from "react/jsx-runtime";
-var Header = class extends React2.Component {
-  render() {
-    return /* @__PURE__ */ jsx2("header", { className: "header", children: /* @__PURE__ */ jsxs2("nav", { className: "nav", children: [
-      /* @__PURE__ */ jsx2("div", { className: "logo", children: "RW" }),
-      /* @__PURE__ */ jsxs2("div", { className: "nav-links", children: [
-        /* @__PURE__ */ jsx2("a", { href: "#work", children: "Work" }),
-        /* @__PURE__ */ jsx2("a", { href: "#about", children: "About" }),
-        /* @__PURE__ */ jsx2("a", { href: "#contact", children: "Contact" })
-      ] })
-    ] }) });
-  }
-};
-var Hero = class extends React2.Component {
-  render() {
-    return /* @__PURE__ */ jsx2("section", { className: "hero", children: /* @__PURE__ */ jsxs2("div", { className: "hero-content", children: [
-      /* @__PURE__ */ jsxs2("h1", { className: "hero-title", children: [
-        "Hello, I'm Rebecca Weir.",
-        /* @__PURE__ */ jsx2("br", {}),
-        "I'm a full-stack software engineer."
-      ] }),
-      /* @__PURE__ */ jsx2("p", { className: "hero-subtitle", children: "I have 7+ years of experience building scalable applications at Medidata Solutions, Vimeo, and leading teams and projects." }),
-      /* @__PURE__ */ jsx2("p", { className: "hero-description", children: "I value clarity, innovation, and collaboration above all else. These ideals guide my approach to problem solving and engineering excellence." })
-    ] }) });
-  }
-};
-var About = class extends React2.Component {
-  render() {
-    return /* @__PURE__ */ jsx2("section", { id: "about", className: "about", children: /* @__PURE__ */ jsx2("div", { className: "container", children: /* @__PURE__ */ jsx2("div", { className: "about-content", children: /* @__PURE__ */ jsxs2("div", { className: "about-text", children: [
-      /* @__PURE__ */ jsx2("h2", { className: "section-title", children: "About Rebecca" }),
-      /* @__PURE__ */ jsx2("p", { children: "I'm a software engineer with 7+ years of experience building scalable, user-focused applications. My background in Biochemistry and Cellular and Molecular Biology from the University of Tennessee gives me a unique analytical perspective on complex technical challenges." }),
-      /* @__PURE__ */ jsx2("p", { children: "I've had the privilege of working at innovative companies like Vimeo and Medidata Solutions, where I've led teams, mentored engineers, and delivered systems that serve millions of users. I'm passionate about clean architecture, performance optimization, and creating technology that makes a real difference." }),
-      /* @__PURE__ */ jsxs2("div", { className: "credentials", children: [
-        /* @__PURE__ */ jsxs2("div", { className: "education", children: [
-          /* @__PURE__ */ jsx2("h3", { children: "Education" }),
-          /* @__PURE__ */ jsx2("p", { children: "Bachelor of Science in Biochemistry And Cellular And Molecular Biology" }),
-          /* @__PURE__ */ jsx2("p", { children: "University of Tennessee, Knoxville, TN" })
-        ] }),
-        /* @__PURE__ */ jsxs2("div", { className: "awards", children: [
-          /* @__PURE__ */ jsx2("h3", { children: "Recognition" }),
-          /* @__PURE__ */ jsx2("p", { children: "Encore Award - For exceptional contribution to a high-impact, time-sensitive project" }),
-          /* @__PURE__ */ jsx2("p", { children: "Pendo Partner Certification - Software management platform expertise" })
-        ] })
-      ] })
-    ] }) }) }) });
-  }
-};
-var Contact = class extends React2.Component {
-  render() {
-    return /* @__PURE__ */ jsx2("section", { id: "contact", className: "contact", children: /* @__PURE__ */ jsxs2("div", { className: "container", children: [
-      /* @__PURE__ */ jsx2("h2", { className: "section-title", children: "Let's Connect" }),
-      /* @__PURE__ */ jsxs2("div", { className: "contact-content", children: [
-        /* @__PURE__ */ jsx2("p", { className: "contact-description", children: "I'm always interested in discussing new opportunities, innovative projects, or just chatting about technology." }),
-        /* @__PURE__ */ jsxs2("div", { className: "contact-links", children: [
-          /* @__PURE__ */ jsx2("a", { href: "mailto:rebeccaweir12@gmail.com", className: "contact-link", children: "rebeccaweir12@gmail.com" }),
-          /* @__PURE__ */ jsx2("a", { href: "https://www.linkedin.com/in/rebeccalweir/", className: "contact-link", children: "LinkedIn Profile" })
-        ] })
-      ] })
-    ] }) });
-  }
-};
-var Portfolio = class extends React2.Component {
-  render() {
-    return /* @__PURE__ */ jsxs2("div", { className: "portfolio", children: [
-      /* @__PURE__ */ jsx2(Header, {}),
-      /* @__PURE__ */ jsx2(Hero, {}),
-      /* @__PURE__ */ jsx2(Experience, {}),
-      /* @__PURE__ */ jsx2(About, {}),
-      /* @__PURE__ */ jsx2(Contact, {})
-    ] });
-  }
-};
+import { jsx as jsx5, jsxs as jsxs5 } from "react/jsx-runtime";
+var Header = () => /* @__PURE__ */ jsx5("header", { className: "header", children: /* @__PURE__ */ jsxs5("nav", { className: "nav", children: [
+  /* @__PURE__ */ jsx5("div", { className: "logo", children: "RW" }),
+  /* @__PURE__ */ jsxs5("div", { className: "nav-links", children: [
+    /* @__PURE__ */ jsx5("a", { href: "#work", children: "Work" }),
+    /* @__PURE__ */ jsx5("a", { href: "#about", children: "About" }),
+    /* @__PURE__ */ jsx5("a", { href: "#contact", children: "Contact" })
+  ] })
+] }) });
+var Portfolio = () => /* @__PURE__ */ jsxs5("div", { className: "portfolio", children: [
+  /* @__PURE__ */ jsx5(Header, {}),
+  /* @__PURE__ */ jsx5(Hero_default, {}),
+  /* @__PURE__ */ jsx5(Experience_default, {}),
+  /* @__PURE__ */ jsx5(About_default, {}),
+  /* @__PURE__ */ jsx5(Contact_default, {})
+] });
 var App_default = Portfolio;
 
 // src/index.js
-import { jsx as jsx3 } from "react/jsx-runtime";
+import { jsx as jsx6 } from "react/jsx-runtime";
 var domNode = document.getElementById("root");
 var root = createRoot(domNode);
-root.render(/* @__PURE__ */ jsx3(App_default, {}));
+root.render(/* @__PURE__ */ jsx6(App_default, {}));
