@@ -1,12 +1,6 @@
 import React from 'react';
 import './index.scss';
 
-// Inject styles
-const styleSheet = document.createElement("style");
-styleSheet.type = "text/css";
-styleSheet.innerText = styles;
-document.head.appendChild(styleSheet);
-
 // Header Component
 class Header extends React.Component {
   render() {
