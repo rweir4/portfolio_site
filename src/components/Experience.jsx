@@ -30,12 +30,12 @@ const Experience = () => {
       <div className="container">
         <h2 className="section-title">Featured Projects</h2>
         <div className="project-highlights">
-          <ProjectHighlight 
-            title="Clinical Trial Authorization System"
-            company="Vimeo"
-            period="2024-2025"
-            description="Led the complete redesign of authorization logic for clinical trial organizations, creating a dynamic navigation system that serves multiple user roles and study categories. Architected the migration from EC2 to ECS with intelligent autoscaling strategies."
-            tech={['PostgreSQL', 'Ruby on Rails', 'JavaScript', 'React-Redux', 'AWS ECS', 'NewRelic']}
+        <ProjectHighlight 
+            title="eCOA Questionnaire Horizontal Layouts"
+            company="Medidata Solutions"
+            period="2018-2021"
+            description="Tech led the development of a comprehensive questionnaire template system for electronic Clinical Outcome Assessments, managing 50+ JIRA tickets and achieving 100% code coverage. Built complex form logic and conditional branching for patient workflows."
+            tech={['TypeScript', 'JavaScript', 'Cypress', 'Jest', 'Draft.js', 'AWS Lambda']}
           />
           <ProjectHighlight 
             title="Subscription State Machine for 13M+ Users"
@@ -45,11 +45,11 @@ const Experience = () => {
             tech={['Ruby on Rails', 'PostgreSQL', 'State Machines', 'Stripe API']}
           />
           <ProjectHighlight 
-            title="eCOA Questionnaire Platform"
+            title="Clinical Trial Authorization System"
             company="Medidata Solutions"
-            period="2018-2021"
-            description="Tech led the development of a comprehensive questionnaire template system for electronic Clinical Outcome Assessments, managing 50+ JIRA tickets and achieving 100% code coverage. Built complex form logic and conditional branching for patient workflows."
-            tech={['TypeScript', 'JavaScript', 'Cypress', 'Jest', 'Draft.js', 'AWS Lambda']}
+            period="2024-2025"
+            description="Led the complete redesign of authorization logic for clinical trial organizations, creating a dynamic navigation system that serves multiple user roles and study categories."
+            tech={['PostgreSQL', 'Ruby on Rails', 'JavaScript', 'React-Redux', 'AWS ECS', 'NewRelic']}
           />
         </div>
         

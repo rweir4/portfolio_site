@@ -23,7 +23,7 @@ var BulletPoint = ({ bulletPoint, index, isExpanded, setExpandedBullet }) => {
           /* @__PURE__ */ jsx(
             "img",
             {
-              src: `../../images/${iconName}.png`,
+              src: `images/${iconName}.png`,
               className: `transition-all duration-300 ${isExpanded ? "w-8 h-8" : "w-6 h-6 mr-3"}`,
               alt: "Company logo"
             }
@@ -70,34 +70,6 @@ var BulletPoint_default = BulletPoint;
 
 // src/experienceSeed.js
 var EXPERIENCES = [
-  {
-    title: "Software Engineer",
-    company: "Medidata Solutions",
-    period: "2018-2021",
-    location: "NYC Based",
-    highlights: [
-      {
-        title: "Clinical Trial Organizations",
-        expandedBody: "Tech led Clinical Trial Organizations project to redesigned authorization logic for dynamic navigation bar, working across PostgreSQL, Ruby on Rails, and Javascript with React-Redux."
-      },
-      {
-        title: "Advanced Filters and Search",
-        expandedBody: "Created advanced filters and search across microservices to integrate with dedicated roles service to deliver paginated results based on study categories and user roles."
-      },
-      {
-        title: "EC2 to ECS Migration",
-        expandedBody: "Migrated authorization application platform from EC2 to ECS and defining autoscaling strategies using AWS Cloudwatch metrics to improve resilience and cost efficiency."
-      },
-      {
-        title: "NewRelic Integration",
-        expandedBody: "Integrated with NewRelic to capture key metrics across role management workflows and drive performance insights."
-      },
-      {
-        title: "Team Lead",
-        expandedBody: "Acted as team lead for 6 months, mentored two engineers on technical and career development through 1:1s, pair programming, and code review."
-      }
-    ]
-  },
   {
     title: "Software Engineer II",
     company: "Vimeo",
@@ -177,6 +149,34 @@ var EXPERIENCES = [
         expandedBody: "Designed and proposed Predictive Questionnaire Templates AI Project using AWS Bedrock."
       }
     ]
+  },
+  {
+    title: "Software Engineer",
+    company: "Medidata Solutions",
+    period: "2018-2021",
+    location: "NYC Based",
+    highlights: [
+      {
+        title: "Clinical Trial Organizations",
+        expandedBody: "Tech led Clinical Trial Organizations project to redesigned authorization logic for dynamic navigation bar, working across PostgreSQL, Ruby on Rails, and Javascript with React-Redux."
+      },
+      {
+        title: "Advanced Filters and Search",
+        expandedBody: "Created advanced filters and search across microservices to integrate with dedicated roles service to deliver paginated results based on study categories and user roles."
+      },
+      {
+        title: "EC2 to ECS Migration",
+        expandedBody: "Migrated authorization application platform from EC2 to ECS and defining autoscaling strategies using AWS Cloudwatch metrics to improve resilience and cost efficiency."
+      },
+      {
+        title: "NewRelic Integration",
+        expandedBody: "Integrated with NewRelic to capture key metrics across role management workflows and drive performance insights."
+      },
+      {
+        title: "Team Lead",
+        expandedBody: "Acted as team lead for 6 months, mentored two engineers on technical and career development through 1:1s, pair programming, and code review."
+      }
+    ]
   }
 ];
 
@@ -203,11 +203,11 @@ var Experience = () => {
       /* @__PURE__ */ jsx2(
         ProjectHighlight,
         {
-          title: "Clinical Trial Authorization System",
-          company: "Vimeo",
-          period: "2024-2025",
-          description: "Led the complete redesign of authorization logic for clinical trial organizations, creating a dynamic navigation system that serves multiple user roles and study categories. Architected the migration from EC2 to ECS with intelligent autoscaling strategies.",
-          tech: ["PostgreSQL", "Ruby on Rails", "JavaScript", "React-Redux", "AWS ECS", "NewRelic"]
+          title: "eCOA Questionnaire Horizontal Layouts",
+          company: "Medidata Solutions",
+          period: "2018-2021",
+          description: "Tech led the development of a comprehensive questionnaire template system for electronic Clinical Outcome Assessments, managing 50+ JIRA tickets and achieving 100% code coverage. Built complex form logic and conditional branching for patient workflows.",
+          tech: ["TypeScript", "JavaScript", "Cypress", "Jest", "Draft.js", "AWS Lambda"]
         }
       ),
       /* @__PURE__ */ jsx2(
@@ -223,11 +223,11 @@ var Experience = () => {
       /* @__PURE__ */ jsx2(
         ProjectHighlight,
         {
-          title: "eCOA Questionnaire Platform",
+          title: "Clinical Trial Authorization System",
           company: "Medidata Solutions",
-          period: "2018-2021",
-          description: "Tech led the development of a comprehensive questionnaire template system for electronic Clinical Outcome Assessments, managing 50+ JIRA tickets and achieving 100% code coverage. Built complex form logic and conditional branching for patient workflows.",
-          tech: ["TypeScript", "JavaScript", "Cypress", "Jest", "Draft.js", "AWS Lambda"]
+          period: "2024-2025",
+          description: "Led the complete redesign of authorization logic for clinical trial organizations, creating a dynamic navigation system that serves multiple user roles and study categories.",
+          tech: ["PostgreSQL", "Ruby on Rails", "JavaScript", "React-Redux", "AWS ECS", "NewRelic"]
         }
       )
     ] }),

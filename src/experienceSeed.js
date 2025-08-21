@@ -1,33 +1,5 @@
 export const EXPERIENCES = [
   {
-    title: "Software Engineer",
-    company: "Medidata Solutions",
-    period: "2018-2021",
-    location: "NYC Based",
-    highlights: [
-      {
-        title: "Clinical Trial Organizations",
-        expandedBody: "Tech led Clinical Trial Organizations project to redesigned authorization logic for dynamic navigation bar, working across PostgreSQL, Ruby on Rails, and Javascript with React-Redux."
-      },
-      {
-        title: "Advanced Filters and Search",
-        expandedBody: "Created advanced filters and search across microservices to integrate with dedicated roles service to deliver paginated results based on study categories and user roles."
-      },
-      {
-        title: "EC2 to ECS Migration",
-        expandedBody: "Migrated authorization application platform from EC2 to ECS and defining autoscaling strategies using AWS Cloudwatch metrics to improve resilience and cost efficiency."
-      },
-      {
-        title: "NewRelic Integration",
-        expandedBody: "Integrated with NewRelic to capture key metrics across role management workflows and drive performance insights."
-      },
-      {
-        title: "Team Lead",
-        expandedBody: "Acted as team lead for 6 months, mentored two engineers on technical and career development through 1:1s, pair programming, and code review."
-      }
-    ]
-  },
-  {
     title: "Software Engineer II",
     company: "Vimeo",
     period: "2021-2022",
@@ -104,6 +76,34 @@ export const EXPERIENCES = [
       {
         title: "Predictive Template AI",
         expandedBody: "Designed and proposed Predictive Questionnaire Templates AI Project using AWS Bedrock."
+      }
+    ]
+  },
+  {
+    title: "Software Engineer",
+    company: "Medidata Solutions",
+    period: "2018-2021",
+    location: "NYC Based",
+    highlights: [
+      {
+        title: "Clinical Trial Organizations",
+        expandedBody: "Tech led Clinical Trial Organizations project to redesigned authorization logic for dynamic navigation bar, working across PostgreSQL, Ruby on Rails, and Javascript with React-Redux."
+      },
+      {
+        title: "Advanced Filters and Search",
+        expandedBody: "Created advanced filters and search across microservices to integrate with dedicated roles service to deliver paginated results based on study categories and user roles."
+      },
+      {
+        title: "EC2 to ECS Migration",
+        expandedBody: "Migrated authorization application platform from EC2 to ECS and defining autoscaling strategies using AWS Cloudwatch metrics to improve resilience and cost efficiency."
+      },
+      {
+        title: "NewRelic Integration",
+        expandedBody: "Integrated with NewRelic to capture key metrics across role management workflows and drive performance insights."
+      },
+      {
+        title: "Team Lead",
+        expandedBody: "Acted as team lead for 6 months, mentored two engineers on technical and career development through 1:1s, pair programming, and code review."
       }
     ]
   }
