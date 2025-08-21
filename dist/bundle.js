@@ -36,7 +36,7 @@ var BulletPoint = ({ bulletPoint, index, isExpanded, setExpandedBullet }) => {
       "div",
       {
         className: `transition-all duration-500 ease-in-out overflow-hidden ${isExpanded ? "ml-4 max-w-2xl opacity-100 max-h-screen" : "ml-0 max-w-0 opacity-0 max-h-0"}`,
-        children: /* @__PURE__ */ jsxs("div", { className: "experience-item rounded-lg shadow-lg p-6 min-w-96", children: [
+        children: /* @__PURE__ */ jsxs("div", { className: "experience-item rounded-lg shadow-lg p-6", children: [
           /* @__PURE__ */ jsxs(
             "div",
             {
@@ -280,8 +280,8 @@ var Contact_default = Contact;
 import { jsx as jsx4, jsxs as jsxs4 } from "react/jsx-runtime";
 var About = () => /* @__PURE__ */ jsx4("section", { id: "about", className: "about", children: /* @__PURE__ */ jsx4("div", { className: "container", children: /* @__PURE__ */ jsx4("div", { className: "about-content", children: /* @__PURE__ */ jsxs4("div", { className: "about-text", children: [
   /* @__PURE__ */ jsx4("h2", { className: "section-title", children: "About Rebecca" }),
-  /* @__PURE__ */ jsx4("p", { children: "I'm a software engineer with 7+ years of experience building scalable, user-focused applications. My background in Molecular Biophysics from the University of Tennessee gives me a unique analytical perspective on complex technical challenges." }),
-  /* @__PURE__ */ jsx4("p", { children: "I've had the privilege of working at innovative companies like Vimeo and Medidata Solutions, where I've led teams, mentored engineers, and delivered systems that serve millions of users. I'm passionate about clean architecture, performance optimization, and creating technology that makes a real difference." }),
+  /* @__PURE__ */ jsx4("p", { children: "I'm a software engineer with 7+ years of experience building scalable, user-focused applications. I've had the privilege of working at innovative companies like Vimeo and Medidata Solutions, where I've led teams, mentored engineers, and delivered systems that serve millions of users. I'm passionate about clean architecture, performance optimization, and creating technology that makes a real difference." }),
+  /* @__PURE__ */ jsx4("p", { children: "Studying Molecular Biophysics at the University of Tennessee taught me how to look at complex systems through both a scientific and computational lens. In the lab, I learned how to break down intricate biological processes into models and experiments. Today, I apply that same approach to engineering\u2014dissecting problems, identifying patterns, and building solutions that work at scale. It\u2019s a perspective that helps me bring both rigor and creativity to technical challenges." }),
   /* @__PURE__ */ jsxs4("div", { className: "credentials", children: [
     /* @__PURE__ */ jsxs4("div", { className: "education", children: [
       /* @__PURE__ */ jsx4("h3", { children: "Education" }),

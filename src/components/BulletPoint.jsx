@@ -34,7 +34,7 @@ const BulletPoint = ({ bulletPoint, index, isExpanded, setExpandedBullet }) => {
             : 'ml-0 max-w-0 opacity-0 max-h-0'
         }`}
       >
-        <div className="experience-item rounded-lg shadow-lg p-6 min-w-96">
+        <div className="experience-item rounded-lg shadow-lg p-6">
           <div 
             key={index}
             className={`flex items-start transition-all duration-300`}

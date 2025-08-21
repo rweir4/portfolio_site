@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CompanyContainer from './BulletPoint';
+import BulletPoint from './BulletPoint';
 import { EXPERIENCES } from '../experienceSeed';
 
 const ProjectHighlight = ({ title, company, period, description, tech }) => {
@@ -68,7 +68,7 @@ const Experience = () => {
                 {exp.highlights.map((highlight, hIndex) => {
                   const isExpanded = expandedBullet === highlight.title;
                   return (
-                    <CompanyContainer
+                    <BulletPoint
                       bulletPoint={highlight}
                       index={1}
                       isExpanded={isExpanded}
