@@ -6,9 +6,9 @@ const About = () => (
           <h2 className="section-title">About Rebecca</h2>
           <p>
             I'm a software engineer with 7+ years of experience building scalable, 
-            user-focused applications. My background in Biochemistry and Cellular and 
-            Molecular Biology from the University of Tennessee gives me a unique 
-            analytical perspective on complex technical challenges.
+            user-focused applications. My background in Molecular Biophysics from
+            the University of Tennessee gives me a unique analytical perspective
+            on complex technical challenges.
           </p>
           <p>
             I've had the privilege of working at innovative companies like Vimeo and 

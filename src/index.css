@@ -72,7 +72,7 @@ body {
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 850px;
 }
 
 .hero-title {
@@ -96,6 +96,15 @@ body {
   color: rgba(255, 255, 255, 0.8);
   max-width: 600px;
   line-height: 1.7;
+}
+
+.hero-profile-pic {
+  height: 18rem;
+  width: 20rem;
+  object-fit: cover;
+  object-position: 0 10%;
+  border-radius: 50%;
+  margin-bottom: 10rem;
 }
 
 /* Container */

@@ -280,7 +280,7 @@ var Contact_default = Contact;
 import { jsx as jsx4, jsxs as jsxs4 } from "react/jsx-runtime";
 var About = () => /* @__PURE__ */ jsx4("section", { id: "about", className: "about", children: /* @__PURE__ */ jsx4("div", { className: "container", children: /* @__PURE__ */ jsx4("div", { className: "about-content", children: /* @__PURE__ */ jsxs4("div", { className: "about-text", children: [
   /* @__PURE__ */ jsx4("h2", { className: "section-title", children: "About Rebecca" }),
-  /* @__PURE__ */ jsx4("p", { children: "I'm a software engineer with 7+ years of experience building scalable, user-focused applications. My background in Biochemistry and Cellular and Molecular Biology from the University of Tennessee gives me a unique analytical perspective on complex technical challenges." }),
+  /* @__PURE__ */ jsx4("p", { children: "I'm a software engineer with 7+ years of experience building scalable, user-focused applications. My background in Molecular Biophysics from the University of Tennessee gives me a unique analytical perspective on complex technical challenges." }),
   /* @__PURE__ */ jsx4("p", { children: "I've had the privilege of working at innovative companies like Vimeo and Medidata Solutions, where I've led teams, mentored engineers, and delivered systems that serve millions of users. I'm passionate about clean architecture, performance optimization, and creating technology that makes a real difference." }),
   /* @__PURE__ */ jsxs4("div", { className: "credentials", children: [
     /* @__PURE__ */ jsxs4("div", { className: "education", children: [
@@ -299,15 +299,20 @@ var About_default = About;
 
 // src/components/Hero.jsx
 import { jsx as jsx5, jsxs as jsxs5 } from "react/jsx-runtime";
-var Hero = () => /* @__PURE__ */ jsx5("section", { className: "hero", children: /* @__PURE__ */ jsxs5("div", { className: "hero-content", children: [
-  /* @__PURE__ */ jsxs5("h1", { className: "hero-title", children: [
-    "Hello, I'm Rebecca Weir.",
-    /* @__PURE__ */ jsx5("br", {}),
-    "I'm a full-stack software engineer."
+var Hero = () => /* @__PURE__ */ jsxs5("section", { className: "hero", children: [
+  /* @__PURE__ */ jsxs5("div", { className: "hero-content", children: [
+    /* @__PURE__ */ jsxs5("h1", { className: "hero-title", children: [
+      "Hello,",
+      /* @__PURE__ */ jsx5("br", {}),
+      "I'm Rebecca Weir.",
+      /* @__PURE__ */ jsx5("br", {}),
+      "I'm a full-stack software engineer."
+    ] }),
+    /* @__PURE__ */ jsx5("p", { className: "hero-subtitle", children: "I\u2019ve spent the last 7+ years building scalable apps and leading teams at Medidata and Vimeo." }),
+    /* @__PURE__ */ jsx5("p", { className: "hero-description", children: "I value clarity, innovation, and collaboration above all else. These ideals guide my approach to problem solving and engineering excellence." })
   ] }),
-  /* @__PURE__ */ jsx5("p", { className: "hero-subtitle", children: "I have 7+ years of experience building scalable applications at Medidata Solutions, Vimeo, and leading teams and projects." }),
-  /* @__PURE__ */ jsx5("p", { className: "hero-description", children: "I value clarity, innovation, and collaboration above all else. These ideals guide my approach to problem solving and engineering excellence." })
-] }) });
+  /* @__PURE__ */ jsx5("img", { className: "hero-profile-pic", src: "images/profile_pic.png" })
+] });
 var Hero_default = Hero;
 
 // src/App.jsx
