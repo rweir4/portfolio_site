@@ -5,3 +5,5 @@ This works on localhost, and is deployed on github pages.
 ## [Visit Site](https://rweir4.github.io/portfolio_site/)
 
 ![HomePage Preview](./homepage-preview.png)
+
+Credit: Icons by Muhammad_Usman and Icon mania on FlatIcon
