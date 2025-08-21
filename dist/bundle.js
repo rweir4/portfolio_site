@@ -207,7 +207,7 @@ var Experience = () => {
           company: "Medidata Solutions",
           period: "2018-2021",
           description: "Tech led the development of a comprehensive questionnaire template system for electronic Clinical Outcome Assessments, managing 50+ JIRA tickets and achieving 100% code coverage. Built complex form logic and conditional branching for patient workflows.",
-          tech: ["TypeScript", "JavaScript", "Cypress", "Jest", "Draft.js", "AWS Lambda"]
+          tech: ["TypeScript", "JavaScript", "Cypress", "Jest"]
         }
       ),
       /* @__PURE__ */ jsx2(
@@ -217,7 +217,7 @@ var Experience = () => {
           company: "Vimeo",
           period: "2021-2022",
           description: "Completely redesigned Vimeo's subscription system architecture, implementing a robust state machine to handle complex subscription events and transitions. This system now serves over 13 million users with improved consistency and reliability.",
-          tech: ["Ruby on Rails", "PostgreSQL", "State Machines", "Stripe API"]
+          tech: ["Ruby on Rails", "PostgreSQL", "State Machines"]
         }
       ),
       /* @__PURE__ */ jsx2(
@@ -227,7 +227,7 @@ var Experience = () => {
           company: "Medidata Solutions",
           period: "2024-2025",
           description: "Led the complete redesign of authorization logic for clinical trial organizations, creating a dynamic navigation system that serves multiple user roles and study categories.",
-          tech: ["PostgreSQL", "Ruby on Rails", "JavaScript", "React-Redux", "AWS ECS", "NewRelic"]
+          tech: ["PostgreSQL", "Ruby on Rails", "JavaScript", "React-Redux"]
         }
       )
     ] }),
