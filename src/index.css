@@ -201,11 +201,11 @@ body {
 /* Experience List */
 .experience-list {
   display: flex;
-  flex-direction: column;
   gap: 3rem;
 }
 
 .experience-item {
+  max-width: 800px;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -246,6 +246,7 @@ body {
 
 .exp-highlights {
   list-style: none;
+  color: white;
 }
 
 .exp-highlights li {
@@ -382,6 +383,10 @@ body {
   .exp-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .experience-list {
+    flex-direction: column;
   }
   
   .credentials {
