@@ -6,4 +6,4 @@ This works on localhost, and is deployed on github pages.
 
 ![HomePage Preview](./homepage-preview.png)
 
-Credit: Icons by Muhammad_Usman and Icon mania on FlatIcon
+Credit: Icons by Muhammad_Usman, IcoMania, and  Freepik on FlatIcon
