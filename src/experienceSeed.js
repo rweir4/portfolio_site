@@ -1,41 +1,5 @@
 export const EXPERIENCES = [
   {
-    title: "Software Engineer II",
-    company: "Vimeo",
-    period: "2021-2022",
-    location: "NYC Based",
-    highlights: [
-      {
-        title: "Subscription System",
-        expandedBody: "Redesigned subscription system to track subscriptions across events. Designed, implemented, tested, and released state machine to improve consistency for 13M+ users, using Ruby on Rails and PostgreSQL."
-      },
-      {
-        title: "Multi-tier Subscriptions",
-        expandedBody: "Engineered full-stack support for multi-tier subscriptions and video access from a single tier system."
-      },
-      {
-        title: "Tiered Content Delivery",
-        expandedBody: "Rearchitected business logic, database relationships, and user interface to enable tiered content delivery."
-      },
-      {
-        title: "Vendor Integrations",
-        expandedBody:  "Fixed bugs related to asynchronous responses from external vendor integrations with In-App Purchases by leveraging Datadog."
-      },
-      {
-        title: "User Account Settings",
-        expandedBody:  "Migrated legacy Haml to React framework in user account settings, improving code coverage to 100%.",
-      },
-      {
-        title: "Stripe Support",
-        expandedBody:  "Added Stripe integration support for complex transaction flows such as reduced-cost product processing."
-      },
-      {
-        title: "Video Player Experience",
-        expandedBody:  "Refactored video player experience workflow to accommodate differentiated user access levels and enhance personalization and security."
-      }
-    ]
-  },
-  {
     title: "Software Engineer",
     company: "Medidata Solutions",
     period: "2024-2025",
@@ -76,6 +40,42 @@ export const EXPERIENCES = [
       {
         title: "Predictive Template AI",
         expandedBody: "Designed and proposed Predictive Questionnaire Templates AI Project using AWS Bedrock."
+      }
+    ]
+  },
+  {
+    title: "Software Engineer II",
+    company: "Vimeo",
+    period: "2021-2022",
+    location: "NYC Based",
+    highlights: [
+      {
+        title: "Subscription System",
+        expandedBody: "Redesigned subscription system to track subscriptions across events. Designed, implemented, tested, and released state machine to improve consistency for 13M+ users, using Ruby on Rails and PostgreSQL."
+      },
+      {
+        title: "Multi-tier Subscriptions",
+        expandedBody: "Engineered full-stack support for multi-tier subscriptions and video access from a single tier system."
+      },
+      {
+        title: "Tiered Content Delivery",
+        expandedBody: "Rearchitected business logic, database relationships, and user interface to enable tiered content delivery."
+      },
+      {
+        title: "Vendor Integrations",
+        expandedBody:  "Fixed bugs related to asynchronous responses from external vendor integrations with In-App Purchases by leveraging Datadog."
+      },
+      {
+        title: "User Account Settings",
+        expandedBody:  "Migrated legacy Haml to React framework in user account settings, improving code coverage to 100%.",
+      },
+      {
+        title: "Stripe Support",
+        expandedBody:  "Added Stripe integration support for complex transaction flows such as reduced-cost product processing."
+      },
+      {
+        title: "Video Player Experience",
+        expandedBody:  "Refactored video player experience workflow to accommodate differentiated user access levels and enhance personalization and security."
       }
     ]
   },

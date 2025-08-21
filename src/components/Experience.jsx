@@ -30,7 +30,7 @@ const Experience = () => {
       <div className="container">
         <h2 className="section-title">Featured Projects</h2>
         <div className="project-highlights">
-        <ProjectHighlight 
+          <ProjectHighlight 
             title="eCOA Questionnaire Horizontal Layouts"
             company="Medidata Solutions"
             period="2018-2021"
