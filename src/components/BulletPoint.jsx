@@ -17,7 +17,7 @@ const BulletPoint = ({ bulletPoint, index, isExpanded, setExpandedBullet }) => {
       >
         <div className={`flex absolute ${isExpanded ? 'left-15' : 'left-6'}`}>
           <img 
-            src={`../../${iconName}.png`}
+            src={`../../images/${iconName}.png`}
             className={`transition-all duration-300 ${
               isExpanded ? 'w-8 h-8' : 'w-6 h-6 mr-3'
             }`}

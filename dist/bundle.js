@@ -23,7 +23,7 @@ var BulletPoint = ({ bulletPoint, index, isExpanded, setExpandedBullet }) => {
           /* @__PURE__ */ jsx(
             "img",
             {
-              src: `../../${iconName}.png`,
+              src: `../../images/${iconName}.png`,
               className: `transition-all duration-300 ${isExpanded ? "w-8 h-8" : "w-6 h-6 mr-3"}`,
               alt: "Company logo"
             }
