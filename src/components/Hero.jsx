@@ -1,3 +1,5 @@
+import ChatbotWidget from './ChatbotWidget';
+
 const Hero = () => (
   <section className="hero">
     <div className="hero-content">
