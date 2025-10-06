@@ -97,7 +97,7 @@ const ChatbotWidget = () => {
   const [error, setError] = useState(null);
   const messagesEndRef = useRef(null);
 
-  const API_URL = 'https://your-railway-url.railway.app';
+  const API_URL = 'https://mybot-production-e727.up.railway.app';
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -144,7 +144,7 @@ const ChatbotWidget = () => {
       {!isOpen && (
         <button onClick={() => { setIsOpen(true); setShowTooltip(false); }} className="relative group">
           <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ring-2 ring-blue-500/20 hover:ring-blue-500/40">
-            <img src="/profile-pic.jpg" alt="Profile" className="w-full h-full object-cover" />
+            <img src="images/chat.png" alt="Chat" className="max-w-full max-h-full object-contain" />
           </div>
           {showTooltip && (
             <div className="absolute bottom-full right-0 mb-2 animate-pulse">

@@ -18,6 +18,7 @@ const Hero = () => (
         ideals guide my approach to problem solving and engineering excellence.
       </p>
     </div>
+    <ChatbotWidget />
     <img className="hero-profile-pic" src="images/profile_pic.png"/>
   </section>
 );
