@@ -404,7 +404,7 @@ var ChatbotWidget = () => {
     }
   };
   return /* @__PURE__ */ jsxs5("div", { className: "fixed bottom-8 md:right-8 z-50", children: [
-    !isOpen && /* @__PURE__ */ jsx5("div", { className: "fixed right-8", children: /* @__PURE__ */ jsxs5("button", { onClick: () => {
+    !isOpen && /* @__PURE__ */ jsx5("div", { className: "fixed bottom-8 right-8", children: /* @__PURE__ */ jsxs5("button", { onClick: () => {
       setIsOpen(true);
       setShowTooltip(false);
     }, className: "relative group", children: [
