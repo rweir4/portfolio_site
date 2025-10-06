@@ -140,21 +140,23 @@ const ChatbotWidget = () => {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 z-50">
+    <div>
       {!isOpen && (
-        <button onClick={() => { setIsOpen(true); setShowTooltip(false); }} className="relative group">
-          <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ring-2 ring-blue-500/20 hover:ring-blue-500/40">
-            <img src="images/chat.png" alt="Chat" className="max-w-full max-h-full object-contain" />
-          </div>
-          {showTooltip && (
-            <div className="absolute bottom-full right-0 mb-2 animate-pulse">
-              <div className="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap shadow-lg">
-                ask about me
-                <div className="absolute top-full right-4 w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-gray-900"></div>
-              </div>
+        <div className="fixed bottom-8 right-8 z-50">
+          <button onClick={() => { setIsOpen(true); setShowTooltip(false); }} className="relative group">
+            <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ring-2 ring-blue-500/20 hover:ring-blue-500/40">
+              <img src="images/chat.png" alt="Chat" className="max-w-full max-h-full object-contain" />
             </div>
-          )}
-        </button>
+            {showTooltip && (
+              <div className="absolute bottom-full right-0 mb-2 animate-pulse">
+                <div className="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap shadow-lg">
+                  ask about me
+                  <div className="absolute top-full right-4 w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-gray-900"></div>
+                </div>
+              </div>
+            )}
+          </button>
+        </div>
       )}
 
       {isOpen && (

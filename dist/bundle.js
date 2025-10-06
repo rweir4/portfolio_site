@@ -403,8 +403,8 @@ var ChatbotWidget = () => {
       setIsLoading(false);
     }
   };
-  return /* @__PURE__ */ jsxs5("div", { className: "fixed bottom-8 right-8 z-50", children: [
-    !isOpen && /* @__PURE__ */ jsxs5("button", { onClick: () => {
+  return /* @__PURE__ */ jsxs5("div", { children: [
+    !isOpen && /* @__PURE__ */ jsx5("div", { className: "fixed bottom-8 right-8 z-50", children: /* @__PURE__ */ jsxs5("button", { onClick: () => {
       setIsOpen(true);
       setShowTooltip(false);
     }, className: "relative group", children: [
@@ -413,7 +413,7 @@ var ChatbotWidget = () => {
         "ask about me",
         /* @__PURE__ */ jsx5("div", { className: "absolute top-full right-4 w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-gray-900" })
       ] }) })
-    ] }),
+    ] }) }),
     isOpen && /* @__PURE__ */ jsxs5("div", { className: "bg-white rounded-2xl shadow-2xl w-96 max-w-[calc(100vw-2rem)] h-[600px] max-h-[calc(100vh-2rem)] flex flex-col overflow-hidden border border-gray-200", children: [
       /* @__PURE__ */ jsx5(ChatHeader, { onClose: () => setIsOpen(false) }),
       /* @__PURE__ */ jsxs5("div", { className: "flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50", children: [
