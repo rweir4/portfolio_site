@@ -406,7 +406,7 @@ var ChatbotWidget = () => {
       setShowTooltip(false);
     }, className: "relative group", children: [
       /* @__PURE__ */ jsx5("div", { className: "w-16 h-16 rounded-full overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ring-2 ring-blue-500/20 hover:ring-blue-500/40", children: /* @__PURE__ */ jsx5("img", { src: "images/chat.png", alt: "Chat", className: "max-w-full max-h-full object-contain" }) }),
-      showTooltip && /* @__PURE__ */ jsx5("div", { className: "absolute bottom-full right-0 mb-2 animate-pulse", children: /* @__PURE__ */ jsxs5("div", { className: "bg-gray-900 text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap shadow-lg", children: [
+      showTooltip && /* @__PURE__ */ jsx5("div", { className: "absolute bottom-full right-0 mb-4 animate-pulse", children: /* @__PURE__ */ jsxs5("div", { className: "bg-gray-900 text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap shadow-lg", children: [
         "ask about me",
         /* @__PURE__ */ jsx5("div", { className: "absolute top-full right-4 w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-gray-900" })
       ] }) })
