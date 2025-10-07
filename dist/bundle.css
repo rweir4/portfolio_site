@@ -104,6 +104,26 @@ body {
   margin-bottom: 10rem;
   box-sizing: border-box;
 }
+.project-showcase {
+  width: 90%;
+  margin: auto;
+  padding-bottom: 5rem;
+  p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+  }
+  img {
+    padding-right: 1rem;
+    height: 5rem;
+  }
+  .showcase-card {
+    display: flex;
+    justify-content: center;
+  }
+  .project-highlight {
+    display: flex;
+  }
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -346,6 +366,11 @@ body {
   .hero-profile-pic {
     height: 15rem;
     margin-bottom: 1rem;
+  }
+  .project-showcase {
+    .project-highlight {
+      flex-direction: column;
+    }
   }
   .container {
     padding: 0 1rem;

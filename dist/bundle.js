@@ -452,27 +452,97 @@ var Hero = () => /* @__PURE__ */ jsxs6("section", { className: "hero", children:
 ] });
 var Hero_default = Hero;
 
-// src/App.jsx
+// src/components/ProjectShowcase.jsx
 import { jsx as jsx7, jsxs as jsxs7 } from "react/jsx-runtime";
-var Header = () => /* @__PURE__ */ jsx7("header", { className: "header", children: /* @__PURE__ */ jsxs7("nav", { className: "nav", children: [
-  /* @__PURE__ */ jsx7("div", { className: "logo", children: "RW" }),
-  /* @__PURE__ */ jsxs7("div", { className: "nav-links", children: [
-    /* @__PURE__ */ jsx7("a", { href: "#work", children: "Work" }),
-    /* @__PURE__ */ jsx7("a", { href: "#about", children: "About" }),
-    /* @__PURE__ */ jsx7("a", { href: "#contact", children: "Contact" })
+var ProjectCard = ({ category }) => {
+  return /* @__PURE__ */ jsxs7("div", { className: "showcase-card", children: [
+    /* @__PURE__ */ jsx7("img", { src: `images/${category.icon}` }),
+    /* @__PURE__ */ jsxs7("div", { children: [
+      /* @__PURE__ */ jsx7("h3", { className: "project-title", children: category.title }),
+      /* @__PURE__ */ jsx7("div", { children: category.tooltipContent?.map((info) => {
+        return /* @__PURE__ */ jsx7("p", { children: info });
+      }) })
+    ] })
+  ] });
+};
+var ProjectShowcase = ({ projectInfo }) => {
+  return /* @__PURE__ */ jsxs7("div", { className: "project-showcase", children: [
+    /* @__PURE__ */ jsx7("h2", { className: "section-title", children: "AI Portfolio Assistant" }),
+    /* @__PURE__ */ jsx7("div", { className: "project-highlight", children: projectInfo.map((category) => {
+      return /* @__PURE__ */ jsx7(ProjectCard, { category });
+    }) })
+  ] });
+};
+var ProjectShowcase_default = ProjectShowcase;
+
+// src/constants.js
+var CHATBOX_INFO = [
+  {
+    id: "rag",
+    icon: "plumbing.png",
+    title: "Optimized RAG Pipeline",
+    offset: false,
+    tooltipContent: [
+      "1000-char chunks with 200-char overlap for context preservation",
+      "Retrieves top 5 chunks (~1500 tokens of context)",
+      "Pinecone managed vector database",
+      "LangChain orchestration framework",
+      "OpenAI text-embedding-3-small (<$0.01 ingestion cost)",
+      "Idempotent upsert with orphan cleanup for data consistency"
+    ]
+  },
+  {
+    id: "stack",
+    icon: "algorithm.png",
+    title: "Production-Grade Stack",
+    offset: true,
+    tooltipContent: [
+      "FastAPI + Python 3.11 backend framework",
+      "Claude (Anthropic) as the LLM",
+      "TypedDict for strong typing throughout codebase",
+      "Singleton pattern with lazy initialization for RAG engine",
+      "Atomic file writes with temp files for logger reliability",
+      "Deployed on Railway for scalability"
+    ]
+  },
+  {
+    id: "cost",
+    icon: "money.png",
+    title: "Smart Cost Management",
+    offset: false,
+    tooltipContent: [
+      "$5 daily cap with auto-shutoff protection",
+      "30 requests/hour global rate limiting",
+      "~$0.01-0.02 per query average cost",
+      "Claude pricing: $3/M input, $15/M output tokens",
+      "API_ENABLED environment variable kill switch",
+      "Max 4K output tokens per request for cost control"
+    ]
+  }
+];
+
+// src/App.jsx
+import { jsx as jsx8, jsxs as jsxs8 } from "react/jsx-runtime";
+var Header = () => /* @__PURE__ */ jsx8("header", { className: "header", children: /* @__PURE__ */ jsxs8("nav", { className: "nav", children: [
+  /* @__PURE__ */ jsx8("div", { className: "logo", children: "RW" }),
+  /* @__PURE__ */ jsxs8("div", { className: "nav-links", children: [
+    /* @__PURE__ */ jsx8("a", { href: "#work", children: "Work" }),
+    /* @__PURE__ */ jsx8("a", { href: "#about", children: "About" }),
+    /* @__PURE__ */ jsx8("a", { href: "#contact", children: "Contact" })
   ] })
 ] }) });
-var Portfolio = () => /* @__PURE__ */ jsxs7("div", { className: "portfolio", children: [
-  /* @__PURE__ */ jsx7(Header, {}),
-  /* @__PURE__ */ jsx7(Hero_default, {}),
-  /* @__PURE__ */ jsx7(Experience_default, {}),
-  /* @__PURE__ */ jsx7(About_default, {}),
-  /* @__PURE__ */ jsx7(Contact_default, {})
+var Portfolio = () => /* @__PURE__ */ jsxs8("div", { className: "portfolio", children: [
+  /* @__PURE__ */ jsx8(Header, {}),
+  /* @__PURE__ */ jsx8(Hero_default, {}),
+  /* @__PURE__ */ jsx8(ProjectShowcase_default, { projectInfo: CHATBOX_INFO }),
+  /* @__PURE__ */ jsx8(Experience_default, {}),
+  /* @__PURE__ */ jsx8(About_default, {}),
+  /* @__PURE__ */ jsx8(Contact_default, {})
 ] });
 var App_default = Portfolio;
 
 // src/index.js
-import { jsx as jsx8 } from "react/jsx-runtime";
+import { jsx as jsx9 } from "react/jsx-runtime";
 var domNode = document.getElementById("root");
 var root = createRoot(domNode);
-root.render(/* @__PURE__ */ jsx8(App_default, {}));
+root.render(/* @__PURE__ */ jsx9(App_default, {}));
