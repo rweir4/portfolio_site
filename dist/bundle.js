@@ -198,7 +198,7 @@ var ProjectHighlight = ({ title, company, period, description, tech }) => {
 var Experience = () => {
   const [expandedBullet, setExpandedBullet] = useState2(null);
   return /* @__PURE__ */ jsx2("section", { id: "work", className: "experience", children: /* @__PURE__ */ jsxs2("div", { className: "container", children: [
-    /* @__PURE__ */ jsx2("h2", { className: "section-title", children: "Featured Projects" }),
+    /* @__PURE__ */ jsx2("h2", { className: "section-title", children: "More from My Desk" }),
     /* @__PURE__ */ jsxs2("div", { className: "project-highlights", children: [
       /* @__PURE__ */ jsx2(
         ProjectHighlight,
@@ -465,9 +465,9 @@ var ProjectCard = ({ category }) => {
     ] })
   ] });
 };
-var ProjectShowcase = ({ projectInfo }) => {
+var ProjectShowcase = ({ projectInfo, title }) => {
   return /* @__PURE__ */ jsxs7("div", { className: "project-showcase", children: [
-    /* @__PURE__ */ jsx7("h2", { className: "section-title", children: "AI Portfolio Assistant" }),
+    /* @__PURE__ */ jsx7("h2", { className: "section-title", children: title }),
     /* @__PURE__ */ jsx7("div", { className: "project-highlight", children: projectInfo.map((category) => {
       return /* @__PURE__ */ jsx7(ProjectCard, { category });
     }) })
@@ -520,6 +520,7 @@ var CHATBOX_INFO = [
     ]
   }
 ];
+var CHATBOX_TITLE = "AI Portfolio Assistant";
 
 // src/App.jsx
 import { jsx as jsx8, jsxs as jsxs8 } from "react/jsx-runtime";
@@ -534,7 +535,7 @@ var Header = () => /* @__PURE__ */ jsx8("header", { className: "header", childre
 var Portfolio = () => /* @__PURE__ */ jsxs8("div", { className: "portfolio", children: [
   /* @__PURE__ */ jsx8(Header, {}),
   /* @__PURE__ */ jsx8(Hero_default, {}),
-  /* @__PURE__ */ jsx8(ProjectShowcase_default, { projectInfo: CHATBOX_INFO }),
+  /* @__PURE__ */ jsx8(ProjectShowcase_default, { projectInfo: CHATBOX_INFO, title: CHATBOX_TITLE }),
   /* @__PURE__ */ jsx8(Experience_default, {}),
   /* @__PURE__ */ jsx8(About_default, {}),
   /* @__PURE__ */ jsx8(Contact_default, {})

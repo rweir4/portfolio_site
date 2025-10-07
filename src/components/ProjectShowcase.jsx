@@ -16,10 +16,10 @@ const ProjectCard = ({ category }) => {
   )
 }
 
-const ProjectShowcase = ({ projectInfo }) => {
+const ProjectShowcase = ({ projectInfo, title }) => {
   return (
     <div className='project-showcase'>
-      <h2 className="section-title">AI Portfolio Assistant</h2>
+      <h2 className="section-title">{title}</h2>
       <div className="project-highlight">
         {projectInfo.map(category => {
           return (

@@ -42,3 +42,5 @@ export const CHATBOX_INFO = [
     ]
   }
 ];
+
+export const CHATBOX_TITLE = 'AI Portfolio Assistant'

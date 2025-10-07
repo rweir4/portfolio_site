@@ -4,7 +4,7 @@ import Contact from './components/Contact';
 import About from './components/About';
 import Hero from './components/Hero';
 import ProjectShowcase from './components/ProjectShowcase';
-import { CHATBOX_INFO } from './constants';
+import { CHATBOX_INFO, CHATBOX_TITLE } from './constants';
 
 const Header = () => (
   <header className="header">
@@ -23,7 +23,7 @@ const Portfolio = () => (
   <div className="portfolio">
     <Header />
     <Hero />
-    <ProjectShowcase projectInfo={CHATBOX_INFO}/>
+    <ProjectShowcase projectInfo={CHATBOX_INFO} title={CHATBOX_TITLE} />
     <Experience />
     <About />
     <Contact />

@@ -28,7 +28,7 @@ const Experience = () => {
   return (
     <section id="work" className="experience">
       <div className="container">
-        <h2 className="section-title">Featured Projects</h2>
+        <h2 className="section-title">More from My Desk</h2>
         <div className="project-highlights">
           <ProjectHighlight 
             title="eCOA Questionnaire Horizontal Layouts"
