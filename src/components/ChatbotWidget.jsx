@@ -1,4 +1,3 @@
-// MessageBubble.jsx
 const MessageBubble = ({ message }) => {
   const isUser = message.role === 'user';
   
@@ -21,7 +20,6 @@ const MessageBubble = ({ message }) => {
   );
 };
 
-// SourcesList.jsx
 const SourcesList = ({ sources }) => (
   <details className="mt-2 pt-2 border-t border-gray-200">
     <summary className="text-xs text-gray-600 cursor-pointer hover:text-gray-800">
@@ -39,9 +37,8 @@ const SourcesList = ({ sources }) => (
   </details>
 );
 
-// ChatHeader.jsx
 const ChatHeader = ({ onClose }) => (
-  <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 flex items-center justify-between">
+  <div className="bg-gradient-to-r text-white p-4 flex items-center justify-between">
     <div className="flex items-center gap-3">
       <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-white/30">
         <img src="images/profile_pic.png" alt="Profile" className="w-full h-full object-cover" />
@@ -59,7 +56,6 @@ const ChatHeader = ({ onClose }) => (
   </div>
 );
 
-// ChatInput.jsx
 const ChatInput = ({ value, onChange, onSend, isLoading }) => (
   <div className="p-4 bg-white border-t border-gray-200">
     <div className="flex gap-2">
@@ -85,8 +81,7 @@ const ChatInput = ({ value, onChange, onSend, isLoading }) => (
   </div>
 );
 
-// Main ChatbotWidget.jsx
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const ChatbotWidget = () => {
   const [isOpen, setIsOpen] = useState(false);

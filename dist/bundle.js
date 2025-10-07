@@ -1,9 +1,6 @@
 // src/index.js
 import { createRoot } from "react-dom/client";
 
-// src/App.jsx
-import React3 from "react";
-
 // src/components/Experience.jsx
 import { useState as useState2 } from "react";
 
@@ -298,7 +295,7 @@ var About = () => /* @__PURE__ */ jsx4("section", { id: "about", className: "abo
 var About_default = About;
 
 // src/components/ChatbotWidget.jsx
-import React2, { useState as useState3, useRef, useEffect } from "react";
+import { useState as useState3, useRef, useEffect } from "react";
 import { jsx as jsx5, jsxs as jsxs5 } from "react/jsx-runtime";
 var MessageBubble = ({ message }) => {
   const isUser = message.role === "user";
@@ -328,7 +325,7 @@ var SourcesList = ({ sources }) => /* @__PURE__ */ jsxs5("details", { className:
     ] })
   ] }, i)) })
 ] });
-var ChatHeader = ({ onClose }) => /* @__PURE__ */ jsxs5("div", { className: "bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 flex items-center justify-between", children: [
+var ChatHeader = ({ onClose }) => /* @__PURE__ */ jsxs5("div", { className: "bg-gradient-to-r text-white p-4 flex items-center justify-between", children: [
   /* @__PURE__ */ jsxs5("div", { className: "flex items-center gap-3", children: [
     /* @__PURE__ */ jsx5("div", { className: "w-10 h-10 rounded-full overflow-hidden ring-2 ring-white/30", children: /* @__PURE__ */ jsx5("img", { src: "images/profile_pic.png", alt: "Profile", className: "w-full h-full object-cover" }) }),
     /* @__PURE__ */ jsxs5("div", { children: [

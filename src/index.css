@@ -119,17 +119,19 @@ body {
   }
 
   img {
-    padding-right: 1rem;
+    padding: 0 1rem;
     height: 5rem;
   }
 
   .showcase-card {
     display: flex;
     justify-content: center;
+    max-width: 25rem;
   }
 
   .project-highlight {
     display: flex;
+    justify-content: space-evenly;
   }
 }
 
