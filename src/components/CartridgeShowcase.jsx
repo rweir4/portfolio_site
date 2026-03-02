@@ -28,7 +28,6 @@ const ScreenshotCarousel = () => {
   return (
     <div className="mt-10 md:mt-0 shrink-0 flex flex-col items-center gap-5">
       <img
-        key={index}
         src={screenshots[index].src}
         alt={screenshots[index].caption}
         className="w-full max-w-[260px] rounded-3xl border border-white/15 shadow-2xl animate-fade-in"

@@ -510,8 +510,7 @@ var ScreenshotCarousel = () => {
         src: screenshots[index].src,
         alt: screenshots[index].caption,
         className: "w-full max-w-[260px] rounded-3xl border border-white/15 shadow-2xl animate-fade-in"
-      },
-      index
+      }
     ),
     /* @__PURE__ */ jsx8("span", { className: "text-white/70 text-sm font-medium", children: screenshots[index].caption }),
     /* @__PURE__ */ jsxs8("div", { className: "flex items-center gap-6", children: [
