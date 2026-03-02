@@ -473,54 +473,72 @@ var ProjectShowcase = ({ projectInfo, title }) => {
 var ProjectShowcase_default = ProjectShowcase;
 
 // src/components/CartridgeShowcase.jsx
+import { useState as useState4 } from "react";
 import { jsx as jsx8, jsxs as jsxs8 } from "react/jsx-runtime";
-var CartridgeShowcase = () => /* @__PURE__ */ jsx8("section", { className: "experience", children: /* @__PURE__ */ jsxs8("div", { className: "container", children: [
-  /* @__PURE__ */ jsx8("h2", { className: "section-title", children: "Cartridge - Mobile App" }),
-  /* @__PURE__ */ jsxs8("div", { style: { display: "flex", flexDirection: "column", gap: "4rem" }, children: [
-    /* @__PURE__ */ jsxs8("div", { className: "experience-item", style: { maxWidth: "100%" }, children: [
-      /* @__PURE__ */ jsx8("div", { className: "exp-header", children: /* @__PURE__ */ jsx8("div", { children: /* @__PURE__ */ jsx8("h3", { className: "exp-title", children: "Goodreads for Gamers" }) }) }),
-      /* @__PURE__ */ jsxs8("ul", { className: "exp-highlights", children: [
-        /* @__PURE__ */ jsx8("li", { children: "Built a full-stack mobile app from scratch that lets users search any game via the IGDB API, log their play status, leave ratings and reviews, and track library stats over time." }),
-        /* @__PURE__ */ jsx8("li", { children: "Designed and implemented a Supabase backend with row-level security, including tables for library entries, ratings, and user profiles \u2014 all scoped to the authenticated user." }),
-        /* @__PURE__ */ jsx8("li", { children: "Architected a custom hook layer (useLibrary, useGame, useLibraryEntry, useLibraryMutations) that decouples data-fetching from the UI and provides optimistic refetch patterns." }),
-        /* @__PURE__ */ jsx8("li", { children: "Wrote a comprehensive test suite using Jest and React Native Testing Library, covering all hooks, components, and page flows with shared fixture factories and mock helpers." })
-      ] }),
-      /* @__PURE__ */ jsx8("div", { className: "tech-stack", style: { marginTop: "1.5rem" }, children: ["React Native", "Expo", "TypeScript", "Supabase", "IGDB API", "NativeWind", "Expo Router", "Jest", "RNTL"].map((tech) => /* @__PURE__ */ jsx8("span", { className: "tech-tag", children: tech }, tech)) })
-    ] }),
-    /* @__PURE__ */ jsx8("div", { style: {
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
-      gap: "1.25rem",
-      alignItems: "start"
-    }, children: [
-      { src: "images/cartridge-home.png", caption: "Home dashboard" },
-      { src: "images/cartridge-library.png", caption: "Game library" },
-      { src: "images/cartridge-detail.png", caption: "Game detail" },
-      { src: "images/cartridge-log.png", caption: "Log & rate" },
-      { src: "images/cartridge-profile.png", caption: "Profile & stats" }
-    ].map(({ src, caption }) => /* @__PURE__ */ jsxs8("div", { style: { display: "flex", flexDirection: "column", gap: "0.75rem", alignItems: "center" }, children: [
-      /* @__PURE__ */ jsx8("div", { style: {
-        borderRadius: "16px",
-        overflow: "hidden",
-        border: "1px solid rgba(255,255,255,0.15)",
-        boxShadow: "0 12px 40px rgba(0,0,0,0.3)",
-        width: "100%"
-      }, children: /* @__PURE__ */ jsx8(
-        "img",
+var screenshots = [
+  { src: "images/cartridge-home.png", caption: "Home dashboard" },
+  { src: "images/cartridge-library.png", caption: "Game library" },
+  { src: "images/cartridge-detail.png", caption: "Game detail" },
+  { src: "images/cartridge-log.png", caption: "Log & rate" },
+  { src: "images/cartridge-profile.png", caption: "Profile & stats" }
+];
+var highlights = [
+  "Built a full-stack mobile app that lets users search games via IGDB, log play status, leave ratings and reviews, and track library stats over time.",
+  "Designed a Supabase backend with row-level security covering library entries, ratings, and user profiles.",
+  "Architected a custom hook layer decoupling data-fetching from the UI with optimistic refetch patterns.",
+  "Wrote a comprehensive test suite using Jest and React Native Testing Library across all hooks, components, and page flows."
+];
+var techStack = [
+  "React Native",
+  "Expo",
+  "TypeScript",
+  "Supabase",
+  "IGDB API",
+  "NativeWind",
+  "Expo Router",
+  "Jest",
+  "React Native Testing Library"
+];
+var ScreenshotCarousel = () => {
+  const [index, setIndex] = useState4(0);
+  const prev = () => setIndex((i) => (i - 1 + screenshots.length) % screenshots.length);
+  const next = () => setIndex((i) => (i + 1) % screenshots.length);
+  return /* @__PURE__ */ jsxs8("div", { className: "mt-10 md:mt-0 shrink-0 flex flex-col items-center gap-5", children: [
+    /* @__PURE__ */ jsx8(
+      "img",
+      {
+        src: screenshots[index].src,
+        alt: screenshots[index].caption,
+        className: "w-full max-w-[260px] rounded-3xl border border-white/15 shadow-2xl animate-fade-in"
+      },
+      index
+    ),
+    /* @__PURE__ */ jsx8("span", { className: "text-white/70 text-sm font-medium", children: screenshots[index].caption }),
+    /* @__PURE__ */ jsxs8("div", { className: "flex items-center gap-6", children: [
+      /* @__PURE__ */ jsx8("button", { onClick: prev, className: "w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-colors", children: "\u2190" }),
+      /* @__PURE__ */ jsx8("div", { className: "flex gap-2 items-center", children: screenshots.map((_, i) => /* @__PURE__ */ jsx8(
+        "button",
         {
-          src,
-          alt: caption,
-          style: { width: "100%", display: "block", objectFit: "cover" }
-        }
-      ) }),
-      /* @__PURE__ */ jsx8("span", { style: {
-        color: "rgba(255,255,255,0.6)",
-        fontSize: "0.8rem",
-        fontWeight: 500,
-        textAlign: "center"
-      }, children: caption })
-    ] }, caption)) })
-  ] })
+          onClick: () => setIndex(i),
+          className: `h-2 rounded-full border-none cursor-pointer transition-all duration-300 ${i === index ? "w-5 bg-white" : "w-2 bg-white/35"}`
+        },
+        i
+      )) }),
+      /* @__PURE__ */ jsx8("button", { onClick: next, className: "w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-colors", children: "\u2192" })
+    ] })
+  ] });
+};
+var CartridgeShowcase = () => /* @__PURE__ */ jsx8("div", { className: "bg-white/10 backdrop-blur border border-white/20 rounded-2xl w-[90%] mx-auto", children: /* @__PURE__ */ jsxs8("div", { className: "flex flex-col md:flex-row items-center gap-8 p-20", children: [
+  /* @__PURE__ */ jsxs8("div", { className: "flex-1 pr-0 md:pr-8", children: [
+    /* @__PURE__ */ jsxs8("div", { className: "mb-6", children: [
+      /* @__PURE__ */ jsx8("h2", { className: "section-title", children: "Cartridge - Mobile App" }),
+      /* @__PURE__ */ jsx8("h3", { className: "text-3xl font-semibold text-white mb-1", children: "Goodreads for Gamers" }),
+      /* @__PURE__ */ jsx8("p", { className: "text-white/80 text-lg", children: "Mobile Game Logging App \xB7 Personal Project" })
+    ] }),
+    /* @__PURE__ */ jsx8("ul", { className: "list-none space-y-4 mb-6", children: highlights.map((hightlight) => /* @__PURE__ */ jsx8("li", { className: "text-white/90 leading-relaxed pl-6 relative before:content-['\u2192'] before:absolute before:left-0 before:text-white/60 before:font-bold", children: hightlight }, hightlight)) }),
+    /* @__PURE__ */ jsx8("div", { className: "flex flex-wrap gap-2", children: techStack.map((tech) => /* @__PURE__ */ jsx8("span", { className: "bg-white/15 border border-white/20 text-white px-3 py-1 rounded-full text-xs font-medium", children: tech }, tech)) })
+  ] }),
+  /* @__PURE__ */ jsx8(ScreenshotCarousel, {})
 ] }) });
 var CartridgeShowcase_default = CartridgeShowcase;
 
