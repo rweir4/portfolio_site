@@ -11,7 +11,6 @@ const CartridgeShowcase = () => (
             <div>
               <h3 className="exp-title">Goodreads for Gamers</h3>
             </div>
-            <span className="exp-period">2024</span>
           </div>
 
           <ul className="exp-highlights">

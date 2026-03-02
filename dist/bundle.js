@@ -478,10 +478,7 @@ var CartridgeShowcase = () => /* @__PURE__ */ jsx8("section", { className: "expe
   /* @__PURE__ */ jsx8("h2", { className: "section-title", children: "Cartridge - Mobile App" }),
   /* @__PURE__ */ jsxs8("div", { style: { display: "flex", flexDirection: "column", gap: "4rem" }, children: [
     /* @__PURE__ */ jsxs8("div", { className: "experience-item", style: { maxWidth: "100%" }, children: [
-      /* @__PURE__ */ jsxs8("div", { className: "exp-header", children: [
-        /* @__PURE__ */ jsx8("div", { children: /* @__PURE__ */ jsx8("h3", { className: "exp-title", children: "Goodreads for Gamers" }) }),
-        /* @__PURE__ */ jsx8("span", { className: "exp-period", children: "2024" })
-      ] }),
+      /* @__PURE__ */ jsx8("div", { className: "exp-header", children: /* @__PURE__ */ jsx8("div", { children: /* @__PURE__ */ jsx8("h3", { className: "exp-title", children: "Goodreads for Gamers" }) }) }),
       /* @__PURE__ */ jsxs8("ul", { className: "exp-highlights", children: [
         /* @__PURE__ */ jsx8("li", { children: "Built a full-stack mobile app from scratch that lets users search any game via the IGDB API, log their play status, leave ratings and reviews, and track library stats over time." }),
         /* @__PURE__ */ jsx8("li", { children: "Designed and implemented a Supabase backend with row-level security, including tables for library entries, ratings, and user profiles \u2014 all scoped to the authenticated user." }),
