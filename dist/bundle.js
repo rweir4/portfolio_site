@@ -228,7 +228,7 @@ var Experience = () => {
         }
       )
     ] }),
-    /* @__PURE__ */ jsx2("h2", { className: "section-title", children: "Complete Experience" }),
+    /* @__PURE__ */ jsx2("h2", { className: "section-title", children: "Past Experience" }),
     /* @__PURE__ */ jsx2("div", { className: "experience-list", children: EXPERIENCES.map((exp, index) => /* @__PURE__ */ jsxs2("div", { className: "experience-item", children: [
       /* @__PURE__ */ jsxs2("div", { className: "exp-header", children: [
         /* @__PURE__ */ jsxs2("div", { children: [

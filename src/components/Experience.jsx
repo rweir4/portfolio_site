@@ -53,7 +53,7 @@ const Experience = () => {
           />
         </div>
         
-        <h2 className="section-title">Complete Experience</h2>
+        <h2 className="section-title">Past Experience</h2>
         <div className="experience-list">
           {EXPERIENCES.map((exp, index) => (
             <div key={index} className="experience-item">
