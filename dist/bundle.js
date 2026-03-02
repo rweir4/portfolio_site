@@ -472,6 +472,64 @@ var ProjectShowcase = ({ projectInfo, title }) => {
 };
 var ProjectShowcase_default = ProjectShowcase;
 
+// src/components/CartridgeShowcase.jsx
+import { jsx as jsx8, jsxs as jsxs8 } from "react/jsx-runtime";
+var CartridgeShowcase = () => /* @__PURE__ */ jsx8("section", { className: "experience", children: /* @__PURE__ */ jsxs8("div", { className: "container", children: [
+  /* @__PURE__ */ jsx8("h2", { className: "section-title", children: "Projects" }),
+  /* @__PURE__ */ jsxs8("div", { style: { display: "flex", flexDirection: "column", gap: "4rem" }, children: [
+    /* @__PURE__ */ jsxs8("div", { className: "experience-item", style: { maxWidth: "100%" }, children: [
+      /* @__PURE__ */ jsxs8("div", { className: "exp-header", children: [
+        /* @__PURE__ */ jsxs8("div", { children: [
+          /* @__PURE__ */ jsx8("h3", { className: "exp-title", children: "Cartridge" }),
+          /* @__PURE__ */ jsx8("p", { className: "exp-company", children: "Mobile Game Logging App \xB7 Personal Project" })
+        ] }),
+        /* @__PURE__ */ jsx8("span", { className: "exp-period", children: "2024" })
+      ] }),
+      /* @__PURE__ */ jsxs8("ul", { className: "exp-highlights", children: [
+        /* @__PURE__ */ jsx8("li", { children: "Built a full-stack mobile app from scratch that lets users search any game via the IGDB API, log their play status, leave ratings and reviews, and track library stats over time." }),
+        /* @__PURE__ */ jsx8("li", { children: "Designed and implemented a Supabase backend with row-level security, including tables for library entries, ratings, and user profiles \u2014 all scoped to the authenticated user." }),
+        /* @__PURE__ */ jsx8("li", { children: "Architected a custom hook layer (useLibrary, useGame, useLibraryEntry, useLibraryMutations) that decouples data-fetching from the UI and provides optimistic refetch patterns." }),
+        /* @__PURE__ */ jsx8("li", { children: "Wrote a comprehensive test suite using Jest and React Native Testing Library, covering all hooks, components, and page flows with shared fixture factories and mock helpers." })
+      ] }),
+      /* @__PURE__ */ jsx8("div", { className: "tech-stack", style: { marginTop: "1.5rem" }, children: ["React Native", "Expo", "TypeScript", "Supabase", "IGDB API", "NativeWind", "Expo Router", "Jest", "RNTL"].map((tech) => /* @__PURE__ */ jsx8("span", { className: "tech-tag", children: tech }, tech)) })
+    ] }),
+    /* @__PURE__ */ jsx8("div", { style: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+      gap: "1.25rem",
+      alignItems: "start"
+    }, children: [
+      { src: "images/cartridge-home.png", caption: "Home dashboard" },
+      { src: "images/cartridge-library.png", caption: "Game library" },
+      { src: "images/cartridge-detail.png", caption: "Game detail" },
+      { src: "images/cartridge-log.png", caption: "Log & rate" },
+      { src: "images/cartridge-profile.png", caption: "Profile & stats" }
+    ].map(({ src, caption }) => /* @__PURE__ */ jsxs8("div", { style: { display: "flex", flexDirection: "column", gap: "0.75rem", alignItems: "center" }, children: [
+      /* @__PURE__ */ jsx8("div", { style: {
+        borderRadius: "16px",
+        overflow: "hidden",
+        border: "1px solid rgba(255,255,255,0.15)",
+        boxShadow: "0 12px 40px rgba(0,0,0,0.3)",
+        width: "100%"
+      }, children: /* @__PURE__ */ jsx8(
+        "img",
+        {
+          src,
+          alt: caption,
+          style: { width: "100%", display: "block", objectFit: "cover" }
+        }
+      ) }),
+      /* @__PURE__ */ jsx8("span", { style: {
+        color: "rgba(255,255,255,0.6)",
+        fontSize: "0.8rem",
+        fontWeight: 500,
+        textAlign: "center"
+      }, children: caption })
+    ] }, caption)) })
+  ] })
+] }) });
+var CartridgeShowcase_default = CartridgeShowcase;
+
 // src/constants.js
 var CHATBOX_INFO = [
   {
@@ -520,27 +578,28 @@ var CHATBOX_INFO = [
 var CHATBOX_TITLE = "AI Portfolio Assistant";
 
 // src/App.jsx
-import { jsx as jsx8, jsxs as jsxs8 } from "react/jsx-runtime";
-var Header = () => /* @__PURE__ */ jsx8("header", { className: "header", children: /* @__PURE__ */ jsxs8("nav", { className: "nav", children: [
-  /* @__PURE__ */ jsx8("div", { className: "logo", children: "RW" }),
-  /* @__PURE__ */ jsxs8("div", { className: "nav-links", children: [
-    /* @__PURE__ */ jsx8("a", { href: "#work", children: "Work" }),
-    /* @__PURE__ */ jsx8("a", { href: "#about", children: "About" }),
-    /* @__PURE__ */ jsx8("a", { href: "#contact", children: "Contact" })
+import { jsx as jsx9, jsxs as jsxs9 } from "react/jsx-runtime";
+var Header = () => /* @__PURE__ */ jsx9("header", { className: "header", children: /* @__PURE__ */ jsxs9("nav", { className: "nav", children: [
+  /* @__PURE__ */ jsx9("div", { className: "logo", children: "RW" }),
+  /* @__PURE__ */ jsxs9("div", { className: "nav-links", children: [
+    /* @__PURE__ */ jsx9("a", { href: "#work", children: "Work" }),
+    /* @__PURE__ */ jsx9("a", { href: "#about", children: "About" }),
+    /* @__PURE__ */ jsx9("a", { href: "#contact", children: "Contact" })
   ] })
 ] }) });
-var Portfolio = () => /* @__PURE__ */ jsxs8("div", { className: "portfolio", children: [
-  /* @__PURE__ */ jsx8(Header, {}),
-  /* @__PURE__ */ jsx8(Hero_default, {}),
-  /* @__PURE__ */ jsx8(ProjectShowcase_default, { projectInfo: CHATBOX_INFO, title: CHATBOX_TITLE }),
-  /* @__PURE__ */ jsx8(Experience_default, {}),
-  /* @__PURE__ */ jsx8(About_default, {}),
-  /* @__PURE__ */ jsx8(Contact_default, {})
+var Portfolio = () => /* @__PURE__ */ jsxs9("div", { className: "portfolio", children: [
+  /* @__PURE__ */ jsx9(Header, {}),
+  /* @__PURE__ */ jsx9(Hero_default, {}),
+  /* @__PURE__ */ jsx9(ProjectShowcase_default, { projectInfo: CHATBOX_INFO, title: CHATBOX_TITLE }),
+  /* @__PURE__ */ jsx9(CartridgeShowcase_default, {}),
+  /* @__PURE__ */ jsx9(Experience_default, {}),
+  /* @__PURE__ */ jsx9(About_default, {}),
+  /* @__PURE__ */ jsx9(Contact_default, {})
 ] });
 var App_default = Portfolio;
 
 // src/index.js
-import { jsx as jsx9 } from "react/jsx-runtime";
+import { jsx as jsx10 } from "react/jsx-runtime";
 var domNode = document.getElementById("root");
 var root = createRoot(domNode);
-root.render(/* @__PURE__ */ jsx9(App_default, {}));
+root.render(/* @__PURE__ */ jsx10(App_default, {}));
