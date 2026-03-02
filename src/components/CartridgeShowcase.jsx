@@ -22,16 +22,29 @@ const techStack = [
 
 const ScreenshotCarousel = () => {
   const [index, setIndex] = useState(0);
-  const prev = () => setIndex(i => (i - 1 + screenshots.length) % screenshots.length);
-  const next = () => setIndex(i => (i + 1) % screenshots.length);
+  const [fading, setFading] = useState(false);
+
+  const go = (next) => {
+    setFading(true);
+    setTimeout(() => {
+      setIndex(next);
+      setFading(false);
+    }, 150);
+  };
+
+  const prev = () => go((index - 1 + screenshots.length) % screenshots.length);
+  const next = () => go((index + 1) % screenshots.length);
 
   return (
     <div className="mt-10 md:mt-0 shrink-0 flex flex-col items-center gap-5">
-      <img
-        src={screenshots[index].src}
-        alt={screenshots[index].caption}
-        className="w-full max-w-[260px] rounded-3xl border border-white/15 shadow-2xl animate-fade-in"
-      />
+      <div className="w-56 h-[480px] shrink-0">
+        <img
+          src={screenshots[index].src}
+          alt={screenshots[index].caption}
+          className="w-full h-full object-cover rounded-3xl border border-white/15 shadow-2xl transition-opacity duration-150"
+          style={{ opacity: fading ? 0 : 1 }}
+        />
+      </div>
       <span className="text-white/70 text-sm font-medium">
         {screenshots[index].caption}
       </span>

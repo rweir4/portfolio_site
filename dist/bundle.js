@@ -493,17 +493,26 @@ var techStack = [
 ];
 var ScreenshotCarousel = () => {
   const [index, setIndex] = useState4(0);
-  const prev = () => setIndex((i) => (i - 1 + screenshots.length) % screenshots.length);
-  const next = () => setIndex((i) => (i + 1) % screenshots.length);
+  const [fading, setFading] = useState4(false);
+  const go = (next2) => {
+    setFading(true);
+    setTimeout(() => {
+      setIndex(next2);
+      setFading(false);
+    }, 150);
+  };
+  const prev = () => go((index - 1 + screenshots.length) % screenshots.length);
+  const next = () => go((index + 1) % screenshots.length);
   return /* @__PURE__ */ jsxs8("div", { className: "mt-10 md:mt-0 shrink-0 flex flex-col items-center gap-5", children: [
-    /* @__PURE__ */ jsx8(
+    /* @__PURE__ */ jsx8("div", { className: "w-56 h-[480px] shrink-0", children: /* @__PURE__ */ jsx8(
       "img",
       {
         src: screenshots[index].src,
         alt: screenshots[index].caption,
-        className: "w-full max-w-[260px] rounded-3xl border border-white/15 shadow-2xl animate-fade-in"
+        className: "w-full h-full object-cover rounded-3xl border border-white/15 shadow-2xl transition-opacity duration-150",
+        style: { opacity: fading ? 0 : 1 }
       }
-    ),
+    ) }),
     /* @__PURE__ */ jsx8("span", { className: "text-white/70 text-sm font-medium", children: screenshots[index].caption }),
     /* @__PURE__ */ jsxs8("div", { className: "flex items-center gap-6", children: [
       /* @__PURE__ */ jsx8("button", { onClick: prev, className: "w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-colors", children: "\u2190" }),
