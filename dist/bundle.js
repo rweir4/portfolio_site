@@ -449,28 +449,20 @@ var Hero = () => /* @__PURE__ */ jsxs6("section", { className: "hero", children:
 ] });
 var Hero_default = Hero;
 
-// src/components/ProjectShowcase.jsx
+// src/components/AIChatBotShowcase.jsx
 import { jsx as jsx7, jsxs as jsxs7 } from "react/jsx-runtime";
-var ProjectCard = ({ category }) => {
-  return /* @__PURE__ */ jsxs7("div", { className: "showcase-card", children: [
-    /* @__PURE__ */ jsx7("img", { src: `images/${category.icon}` }),
-    /* @__PURE__ */ jsxs7("div", { children: [
-      /* @__PURE__ */ jsx7("h3", { className: "project-title", children: category.title }),
-      /* @__PURE__ */ jsx7("div", { children: category.tooltipContent?.map((info) => {
-        return /* @__PURE__ */ jsx7("p", { children: info });
-      }) })
-    ] })
-  ] });
-};
-var ProjectShowcase = ({ projectInfo, title }) => {
-  return /* @__PURE__ */ jsxs7("div", { className: "project-showcase", children: [
-    /* @__PURE__ */ jsx7("h2", { className: "section-title", children: title }),
-    /* @__PURE__ */ jsx7("div", { className: "project-highlight", children: projectInfo.map((category) => {
-      return /* @__PURE__ */ jsx7(ProjectCard, { category });
-    }) })
-  ] });
-};
-var ProjectShowcase_default = ProjectShowcase;
+var ProjectCard = ({ category }) => /* @__PURE__ */ jsxs7("div", { className: "showcase-card flex-col sm:flex-row", children: [
+  /* @__PURE__ */ jsx7("img", { src: `images/${category.icon}`, className: "h-24 w-24 object-contain sm:mx-0 sm:h-20 sm:w-auto" }),
+  /* @__PURE__ */ jsxs7("div", { children: [
+    /* @__PURE__ */ jsx7("h3", { className: "project-title", children: category.title }),
+    /* @__PURE__ */ jsx7("div", { children: category.tooltipContent?.map((info) => /* @__PURE__ */ jsx7("p", { children: info }, info)) })
+  ] })
+] });
+var AIChatBotShowcase = ({ projectInfo, title }) => /* @__PURE__ */ jsxs7("div", { className: "project-showcase", children: [
+  /* @__PURE__ */ jsx7("h2", { className: "section-title", children: title }),
+  /* @__PURE__ */ jsx7("div", { className: "project-highlight flex flex-col sm:flex-row", children: projectInfo.map((category) => /* @__PURE__ */ jsx7(ProjectCard, { category }, category.title)) })
+] });
+var AIChatBotShowcase_default = AIChatBotShowcase;
 
 // src/components/CartridgeShowcase.jsx
 import { useState as useState4 } from "react";
@@ -527,7 +519,7 @@ var ScreenshotCarousel = () => {
     ] })
   ] });
 };
-var CartridgeShowcase = () => /* @__PURE__ */ jsx8("div", { className: "bg-white/10 backdrop-blur border border-white/20 rounded-2xl w-[90%] mx-auto", children: /* @__PURE__ */ jsxs8("div", { className: "flex flex-col md:flex-row items-center gap-8 p-20", children: [
+var CartridgeShowcase = () => /* @__PURE__ */ jsx8("div", { className: "bg-white/10 backdrop-blur border border-white/20 rounded-2xl w-[90%] mx-auto", children: /* @__PURE__ */ jsxs8("div", { className: "flex flex-col md:flex-row items-center gap-8 p-6 md:p-20", children: [
   /* @__PURE__ */ jsxs8("div", { className: "flex-1 pr-0 md:pr-8", children: [
     /* @__PURE__ */ jsxs8("div", { className: "mb-6", children: [
       /* @__PURE__ */ jsx8("h2", { className: "section-title", children: "Cartridge - Mobile App" }),
@@ -601,7 +593,7 @@ var Header = () => /* @__PURE__ */ jsx9("header", { className: "header", childre
 var Portfolio = () => /* @__PURE__ */ jsxs9("div", { className: "portfolio", children: [
   /* @__PURE__ */ jsx9(Header, {}),
   /* @__PURE__ */ jsx9(Hero_default, {}),
-  /* @__PURE__ */ jsx9(ProjectShowcase_default, { projectInfo: CHATBOX_INFO, title: CHATBOX_TITLE }),
+  /* @__PURE__ */ jsx9(AIChatBotShowcase_default, { projectInfo: CHATBOX_INFO, title: CHATBOX_TITLE }),
   /* @__PURE__ */ jsx9(CartridgeShowcase_default, {}),
   /* @__PURE__ */ jsx9(Experience_default, {}),
   /* @__PURE__ */ jsx9(About_default, {}),

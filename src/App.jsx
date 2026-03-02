@@ -2,7 +2,7 @@ import Experience from './components/Experience';
 import Contact from './components/Contact';
 import About from './components/About';
 import Hero from './components/Hero';
-import ProjectShowcase from './components/ProjectShowcase';
+import AIChatBotShowcase from './components/AIChatBotShowcase';
 import CartridgeShowcase from './components/CartridgeShowcase';
 import { CHATBOX_INFO, CHATBOX_TITLE } from './constants';
 
@@ -23,7 +23,7 @@ const Portfolio = () => (
   <div className="portfolio">
     <Header />
     <Hero />
-    <ProjectShowcase projectInfo={CHATBOX_INFO} title={CHATBOX_TITLE} />
+    <AIChatBotShowcase projectInfo={CHATBOX_INFO} title={CHATBOX_TITLE} />
     <CartridgeShowcase />
     <Experience />
     <About />

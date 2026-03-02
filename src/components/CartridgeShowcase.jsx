@@ -54,7 +54,7 @@ const ScreenshotCarousel = () => {
 
 const CartridgeShowcase = () => (
   <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl w-[90%] mx-auto">
-    <div className="flex flex-col md:flex-row items-center gap-8 p-20">
+    <div className="flex flex-col md:flex-row items-center gap-8 p-6 md:p-20">
       <div className="flex-1 pr-0 md:pr-8">
         <div className="mb-6">
           <h2 className="section-title">Cartridge - Mobile App</h2>
