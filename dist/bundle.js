@@ -475,14 +475,11 @@ var ProjectShowcase_default = ProjectShowcase;
 // src/components/CartridgeShowcase.jsx
 import { jsx as jsx8, jsxs as jsxs8 } from "react/jsx-runtime";
 var CartridgeShowcase = () => /* @__PURE__ */ jsx8("section", { className: "experience", children: /* @__PURE__ */ jsxs8("div", { className: "container", children: [
-  /* @__PURE__ */ jsx8("h2", { className: "section-title", children: "Projects" }),
+  /* @__PURE__ */ jsx8("h2", { className: "section-title", children: "Cartridge Mobile App" }),
   /* @__PURE__ */ jsxs8("div", { style: { display: "flex", flexDirection: "column", gap: "4rem" }, children: [
     /* @__PURE__ */ jsxs8("div", { className: "experience-item", style: { maxWidth: "100%" }, children: [
       /* @__PURE__ */ jsxs8("div", { className: "exp-header", children: [
-        /* @__PURE__ */ jsxs8("div", { children: [
-          /* @__PURE__ */ jsx8("h3", { className: "exp-title", children: "Cartridge" }),
-          /* @__PURE__ */ jsx8("p", { className: "exp-company", children: "Mobile Game Logging App \xB7 Personal Project" })
-        ] }),
+        /* @__PURE__ */ jsx8("div", { children: /* @__PURE__ */ jsx8("h3", { className: "exp-title", children: "Goodreads for Gamers" }) }),
         /* @__PURE__ */ jsx8("span", { className: "exp-period", children: "2024" })
       ] }),
       /* @__PURE__ */ jsxs8("ul", { className: "exp-highlights", children: [

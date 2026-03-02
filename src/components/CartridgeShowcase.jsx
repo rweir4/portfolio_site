@@ -1,7 +1,7 @@
 const CartridgeShowcase = () => (
   <section className="experience">
     <div className="container">
-      <h2 className="section-title">Projects</h2>
+      <h2 className="section-title">Cartridge Mobile App</h2>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
 
@@ -9,8 +9,7 @@ const CartridgeShowcase = () => (
         <div className="experience-item" style={{ maxWidth: '100%' }}>
           <div className="exp-header">
             <div>
-              <h3 className="exp-title">Cartridge</h3>
-              <p className="exp-company">Mobile Game Logging App · Personal Project</p>
+              <h3 className="exp-title">Goodreads for Gamers</h3>
             </div>
             <span className="exp-period">2024</span>
           </div>
