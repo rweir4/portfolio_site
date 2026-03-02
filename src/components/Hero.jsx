@@ -8,7 +8,7 @@ const Hero = () => (
         <br />
         I'm Rebecca Weir.
         <br />
-        I'm a full-stack software engineer.
+        I'm a senior full-stack software engineer.
       </h1>
       <p className="hero-subtitle">
         I’ve spent the last 7+ years building scalable apps and leading teams at Medidata and Vimeo.

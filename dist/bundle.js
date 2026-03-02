@@ -439,7 +439,7 @@ var Hero = () => /* @__PURE__ */ jsxs6("section", { className: "hero", children:
       /* @__PURE__ */ jsx6("br", {}),
       "I'm Rebecca Weir.",
       /* @__PURE__ */ jsx6("br", {}),
-      "I'm a full-stack software engineer."
+      "I'm a senior full-stack software engineer."
     ] }),
     /* @__PURE__ */ jsx6("p", { className: "hero-subtitle", children: "I\u2019ve spent the last 7+ years building scalable apps and leading teams at Medidata and Vimeo." }),
     /* @__PURE__ */ jsx6("p", { className: "hero-description", children: "I value clarity, innovation, and collaboration above all else. These ideals guide my approach to problem solving and engineering excellence." })
