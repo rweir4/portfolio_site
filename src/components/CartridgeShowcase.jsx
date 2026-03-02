@@ -1,7 +1,7 @@
 const CartridgeShowcase = () => (
   <section className="experience">
     <div className="container">
-      <h2 className="section-title">Cartridge Mobile App</h2>
+      <h2 className="section-title">Cartridge - Mobile App</h2>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
 
