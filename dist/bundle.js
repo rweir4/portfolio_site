@@ -2,54 +2,46 @@
 import { createRoot } from "react-dom/client";
 
 // src/components/Experience.jsx
-import { useState as useState2 } from "react";
+import { useState } from "react";
 
 // src/components/BulletPoint.jsx
-import React, { useState } from "react";
+import React from "react";
 import { jsx, jsxs } from "react/jsx-runtime";
-var BulletPoint = ({ bulletPoint, index, isExpanded, setExpandedBullet }) => {
+var BulletPoint = ({ bulletPoint, isExpanded, setExpandedBullet }) => {
   const { title, expandedBody } = bulletPoint;
   const iconName = isExpanded ? "open_circle" : "closed_circle";
-  return /* @__PURE__ */ jsxs("div", { className: `flex items-start transition-all duration-300 my-3 ${isExpanded ? "h-auto" : "h-12"}`, children: [
-    /* @__PURE__ */ jsx(
-      "div",
+  const toggle = () => setExpandedBullet(isExpanded ? null : title);
+  return /* @__PURE__ */ jsxs("div", { className: "mb-3", children: [
+    /* @__PURE__ */ jsxs(
+      "button",
       {
-        className: `relative flex-shrink-0 text-white rounded-full flex items-center justify-center cursor-pointer transition-all duration-500 ease-in-out hover:shadow-lg ${isExpanded ? "w-16 h-16" : "w-full h-12 hover:scale-110 px-5"}`,
-        onClick: () => isExpanded ? setExpandedBullet(null) : setExpandedBullet(title),
-        children: /* @__PURE__ */ jsxs("div", { className: `flex absolute ${isExpanded ? "left-15" : "left-6"}`, children: [
+        type: "button",
+        onClick: toggle,
+        "aria-expanded": isExpanded,
+        className: "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left text-white cursor-pointer transition-colors duration-200 hover:bg-white/10 focus:outline-none",
+        children: [
           /* @__PURE__ */ jsx(
             "img",
             {
               src: `images/${iconName}.png`,
-              className: `transition-all duration-300 ${isExpanded ? "w-8 h-8" : "w-6 h-6 mr-3"}`,
-              alt: "Company logo"
+              className: "w-6 h-6 flex-shrink-0",
+              alt: "",
+              "aria-hidden": "true"
             }
           ),
-          !isExpanded && /* @__PURE__ */ jsx("div", { className: "text-white text-wrap", children: title })
-        ] })
+          /* @__PURE__ */ jsx("span", { className: "flex-1 leading-snug", children: title })
+        ]
       }
     ),
     /* @__PURE__ */ jsx(
       "div",
       {
-        className: `transition-all duration-500 ease-in-out overflow-hidden ${isExpanded ? "ml-4 max-w-2xl opacity-100 max-h-screen" : "ml-0 max-w-0 opacity-0 max-h-0"}`,
-        children: /* @__PURE__ */ jsxs("div", { className: "experience-item rounded-lg shadow-lg p-6", children: [
-          /* @__PURE__ */ jsxs(
-            "div",
-            {
-              className: `flex items-start transition-all duration-300`,
-              style: {
-                transitionDelay: isExpanded ? `${index * 100}ms` : "0ms",
-                opacity: isExpanded ? 1 : 0,
-                transform: isExpanded ? "translateY(0)" : "translateY(10px)"
-              },
-              children: [
-                /* @__PURE__ */ jsx("div", { className: "w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0" }),
-                /* @__PURE__ */ jsx("span", { className: "text-white leading-relaxed", children: expandedBody })
-              ]
-            },
-            index
-          ),
+        className: `grid transition-all duration-500 ease-in-out ${isExpanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`,
+        children: /* @__PURE__ */ jsx("div", { className: "overflow-hidden", children: /* @__PURE__ */ jsxs("div", { className: "experience-item rounded-lg shadow-lg p-6 mt-2 ml-9", children: [
+          /* @__PURE__ */ jsxs("div", { className: "flex items-start", children: [
+            /* @__PURE__ */ jsx("div", { className: "w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0" }),
+            /* @__PURE__ */ jsx("span", { className: "text-white leading-relaxed", children: expandedBody })
+          ] }),
           /* @__PURE__ */ jsx(
             "button",
             {
@@ -58,7 +50,7 @@ var BulletPoint = ({ bulletPoint, index, isExpanded, setExpandedBullet }) => {
               children: "Close"
             }
           )
-        ] })
+        ] }) })
       }
     )
   ] });
@@ -193,7 +185,7 @@ var ProjectHighlight = ({ title, company, period, description, tech }) => {
   ] });
 };
 var Experience = () => {
-  const [expandedBullet, setExpandedBullet] = useState2(null);
+  const [expandedBullet, setExpandedBullet] = useState(null);
   return /* @__PURE__ */ jsx2("section", { id: "work", className: "experience", children: /* @__PURE__ */ jsxs2("div", { className: "container", children: [
     /* @__PURE__ */ jsx2("h2", { className: "section-title", children: "More from My Desk" }),
     /* @__PURE__ */ jsxs2("div", { className: "project-highlights", children: [
@@ -241,16 +233,16 @@ var Experience = () => {
         ] }),
         /* @__PURE__ */ jsx2("div", { className: "exp-period", children: exp.period })
       ] }),
-      /* @__PURE__ */ jsx2("li", { className: "exp-highlights", children: exp.highlights.map((highlight, hIndex) => {
+      /* @__PURE__ */ jsx2("div", { className: "exp-highlights", children: exp.highlights.map((highlight, hIndex) => {
         const isExpanded = expandedBullet === highlight.title;
         return /* @__PURE__ */ jsx2(
           BulletPoint_default,
           {
             bulletPoint: highlight,
-            index: 1,
             isExpanded,
             setExpandedBullet
-          }
+          },
+          `${index}-${hIndex}`
         );
       }) })
     ] }, index)) })
@@ -277,7 +269,7 @@ var Contact_default = Contact;
 import { jsx as jsx4, jsxs as jsxs4 } from "react/jsx-runtime";
 var About = () => /* @__PURE__ */ jsx4("section", { id: "about", className: "about", children: /* @__PURE__ */ jsx4("div", { className: "container", children: /* @__PURE__ */ jsx4("div", { className: "about-content", children: /* @__PURE__ */ jsxs4("div", { className: "about-text", children: [
   /* @__PURE__ */ jsx4("h2", { className: "section-title", children: "About Rebecca" }),
-  /* @__PURE__ */ jsx4("p", { children: "I'm a software engineer with 7+ years of experience building scalable, user-focused applications. I've had the privilege of working at innovative companies like Vimeo and Medidata Solutions, where I've led teams, mentored engineers, and delivered systems that serve millions of users. I'm passionate about clean architecture, performance optimization, and creating technology that makes a real difference." }),
+  /* @__PURE__ */ jsx4("p", { children: "I'm a software engineer with 8+ years of experience building scalable, user-focused applications. I've had the privilege of working at innovative companies like Vimeo and Medidata Solutions, where I've led teams, mentored engineers, and delivered systems that serve millions of users. I'm passionate about clean architecture, performance optimization, and creating technology that makes a real difference." }),
   /* @__PURE__ */ jsx4("p", { children: "Studying Molecular Biophysics at the University of Tennessee taught me how to look at complex systems through both a scientific and computational lens. In the lab, I learned how to break down intricate biological processes into models and experiments. Today, I apply that same approach to engineering\u2014dissecting problems, identifying patterns, and building solutions that work at scale. It\u2019s a perspective that helps me bring both rigor and creativity to technical challenges." }),
   /* @__PURE__ */ jsxs4("div", { className: "credentials", children: [
     /* @__PURE__ */ jsxs4("div", { className: "education", children: [
@@ -295,7 +287,7 @@ var About = () => /* @__PURE__ */ jsx4("section", { id: "about", className: "abo
 var About_default = About;
 
 // src/components/ChatbotWidget.jsx
-import { useState as useState3, useRef, useEffect } from "react";
+import { useState as useState2, useRef, useEffect } from "react";
 import { jsx as jsx5, jsxs as jsxs5 } from "react/jsx-runtime";
 var MessageBubble = ({ message }) => {
   const isUser = message.role === "user";
@@ -359,12 +351,12 @@ var ChatInput = ({ value, onChange, onSend, isLoading }) => /* @__PURE__ */ jsx5
   )
 ] }) });
 var ChatbotWidget = () => {
-  const [isOpen, setIsOpen] = useState3(false);
-  const [messages, setMessages] = useState3([]);
-  const [input, setInput] = useState3("");
-  const [isLoading, setIsLoading] = useState3(false);
-  const [showTooltip, setShowTooltip] = useState3(true);
-  const [error, setError] = useState3(null);
+  const [isOpen, setIsOpen] = useState2(false);
+  const [messages, setMessages] = useState2([]);
+  const [input, setInput] = useState2("");
+  const [isLoading, setIsLoading] = useState2(false);
+  const [showTooltip, setShowTooltip] = useState2(true);
+  const [error, setError] = useState2(null);
   const messagesEndRef = useRef(null);
   const API_URL = "https://mybot-production-e727.up.railway.app";
   useEffect(() => {
@@ -441,7 +433,7 @@ var Hero = () => /* @__PURE__ */ jsxs6("section", { className: "hero", children:
       /* @__PURE__ */ jsx6("br", {}),
       "I'm a senior full-stack software engineer."
     ] }),
-    /* @__PURE__ */ jsx6("p", { className: "hero-subtitle", children: "I\u2019ve spent the last 7+ years building scalable apps and leading teams at Medidata and Vimeo." }),
+    /* @__PURE__ */ jsx6("p", { className: "hero-subtitle", children: "I\u2019ve spent the last 8+ years building scalable apps and leading teams at Medidata and Vimeo." }),
     /* @__PURE__ */ jsx6("p", { className: "hero-description", children: "I value clarity, innovation, and collaboration above all else. These ideals guide my approach to problem solving and engineering excellence." })
   ] }),
   /* @__PURE__ */ jsx6(ChatbotWidget_default, {}),
@@ -451,21 +443,21 @@ var Hero_default = Hero;
 
 // src/components/AIChatBotShowcase.jsx
 import { jsx as jsx7, jsxs as jsxs7 } from "react/jsx-runtime";
-var ProjectCard = ({ category }) => /* @__PURE__ */ jsxs7("div", { className: "showcase-card flex-col sm:flex-row", children: [
+var ProjectCard = ({ category }) => /* @__PURE__ */ jsxs7("div", { className: "showcase-card flex flex-1 flex-col sm:flex-row gap-4", children: [
   /* @__PURE__ */ jsx7("img", { src: `images/${category.icon}`, className: "h-24 w-24 object-contain sm:mx-0 sm:h-20 sm:w-auto" }),
   /* @__PURE__ */ jsxs7("div", { children: [
     /* @__PURE__ */ jsx7("h3", { className: "project-title", children: category.title }),
     /* @__PURE__ */ jsx7("div", { children: category.tooltipContent?.map((info) => /* @__PURE__ */ jsx7("p", { children: info }, info)) })
   ] })
 ] });
-var AIChatBotShowcase = ({ projectInfo, title }) => /* @__PURE__ */ jsxs7("div", { className: "project-showcase", children: [
+var AIChatBotShowcase = ({ projectInfo, title }) => /* @__PURE__ */ jsxs7("div", { className: "project-showcase container", children: [
   /* @__PURE__ */ jsx7("h2", { className: "section-title", children: title }),
-  /* @__PURE__ */ jsx7("div", { className: "project-highlight flex flex-col sm:flex-row", children: projectInfo.map((category) => /* @__PURE__ */ jsx7(ProjectCard, { category }, category.title)) })
+  /* @__PURE__ */ jsx7("div", { className: "project-highlight flex flex-col sm:flex-row gap-8", children: projectInfo.map((category) => /* @__PURE__ */ jsx7(ProjectCard, { category }, category.title)) })
 ] });
 var AIChatBotShowcase_default = AIChatBotShowcase;
 
 // src/components/CartridgeShowcase.jsx
-import { useState as useState4 } from "react";
+import { useState as useState3 } from "react";
 import { jsx as jsx8, jsxs as jsxs8 } from "react/jsx-runtime";
 var screenshots = [
   { src: "images/cartridge-home.png", caption: "Home dashboard" },
@@ -492,8 +484,8 @@ var techStack = [
   "React Native Testing Library"
 ];
 var ScreenshotCarousel = () => {
-  const [index, setIndex] = useState4(0);
-  const [fading, setFading] = useState4(false);
+  const [index, setIndex] = useState3(0);
+  const [fading, setFading] = useState3(false);
   const go = (next2) => {
     setFading(true);
     setTimeout(() => {
@@ -528,7 +520,7 @@ var ScreenshotCarousel = () => {
     ] })
   ] });
 };
-var CartridgeShowcase = () => /* @__PURE__ */ jsx8("div", { className: "bg-white/10 backdrop-blur border border-white/20 rounded-2xl w-[90%] mx-auto", children: /* @__PURE__ */ jsxs8("div", { className: "flex flex-col md:flex-row items-center gap-8 p-6 md:p-20", children: [
+var CartridgeShowcase = () => /* @__PURE__ */ jsx8("div", { className: "container mx-auto px-8", children: /* @__PURE__ */ jsx8("div", { className: "bg-white/10 backdrop-blur border border-white/20 rounded-2xl", children: /* @__PURE__ */ jsxs8("div", { className: "flex flex-col md:flex-row items-center gap-8 p-6 md:p-20", children: [
   /* @__PURE__ */ jsxs8("div", { className: "flex-1 pr-0 md:pr-8", children: [
     /* @__PURE__ */ jsxs8("div", { className: "mb-6", children: [
       /* @__PURE__ */ jsx8("h2", { className: "section-title", children: "Cartridge - Mobile App" }),
@@ -539,7 +531,7 @@ var CartridgeShowcase = () => /* @__PURE__ */ jsx8("div", { className: "bg-white
     /* @__PURE__ */ jsx8("div", { className: "flex flex-wrap gap-2", children: techStack.map((tech) => /* @__PURE__ */ jsx8("span", { className: "bg-white/15 border border-white/20 text-white px-3 py-1 rounded-full text-xs font-medium", children: tech }, tech)) })
   ] }),
   /* @__PURE__ */ jsx8(ScreenshotCarousel, {})
-] }) });
+] }) }) });
 var CartridgeShowcase_default = CartridgeShowcase;
 
 // src/constants.js
@@ -603,8 +595,8 @@ var Portfolio = () => /* @__PURE__ */ jsxs9("div", { className: "portfolio", chi
   /* @__PURE__ */ jsx9(Header, {}),
   /* @__PURE__ */ jsx9(Hero_default, {}),
   /* @__PURE__ */ jsx9(AIChatBotShowcase_default, { projectInfo: CHATBOX_INFO, title: CHATBOX_TITLE }),
-  /* @__PURE__ */ jsx9(CartridgeShowcase_default, {}),
   /* @__PURE__ */ jsx9(Experience_default, {}),
+  /* @__PURE__ */ jsx9(CartridgeShowcase_default, {}),
   /* @__PURE__ */ jsx9(About_default, {}),
   /* @__PURE__ */ jsx9(Contact_default, {})
 ] });

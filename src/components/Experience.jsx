@@ -64,19 +64,19 @@ const Experience = () => {
                 </div>
                 <div className="exp-period">{exp.period}</div>
               </div>
-              <li className="exp-highlights">
+              <div className="exp-highlights">
                 {exp.highlights.map((highlight, hIndex) => {
                   const isExpanded = expandedBullet === highlight.title;
                   return (
                     <BulletPoint
+                      key={`${index}-${hIndex}`}
                       bulletPoint={highlight}
-                      index={1}
                       isExpanded={isExpanded}
                       setExpandedBullet={setExpandedBullet}
                     />
                   )
                 })}
-              </li>
+              </div>
             </div>
           ))}
         </div>

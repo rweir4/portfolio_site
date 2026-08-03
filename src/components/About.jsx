@@ -5,7 +5,7 @@ const About = () => (
         <div className="about-text">
           <h2 className="section-title">About Rebecca</h2>
           <p>
-            I'm a software engineer with 7+ years of experience building scalable, 
+            I'm a software engineer with 8+ years of experience building scalable, 
             user-focused applications. I've had the privilege of working at innovative companies like Vimeo and 
             Medidata Solutions, where I've led teams, mentored engineers, and delivered 
             systems that serve millions of users. I'm passionate about clean architecture, 

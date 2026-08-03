@@ -28,6 +28,8 @@
   },
   "devDependencies": {
     "@babel/preset-react": "^7.27.1",
-    "esbuild": "^0.25.9"
+    "connect-livereload": "^0.6.1",
+    "esbuild": "^0.25.9",
+    "livereload": "^0.10.3"
   }
 }

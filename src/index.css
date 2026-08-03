@@ -109,9 +109,9 @@ body {
 }
 
 .project-showcase {
-  width: 90%;
-  margin: auto;
-  padding-bottom: 5rem;
+  max-width: 1200px; /* mirror .container exactly so it lines up with the experience sections at every width */
+  margin: 0 auto;
+  padding: 0 2rem 5rem; /* .container's horizontal 2rem padding + keep the bottom spacing */
 
   p {
     color: rgba(255, 255, 255, 0.9);
@@ -126,12 +126,12 @@ body {
   .showcase-card {
     display: flex;
     justify-content: center;
-    max-width: 25rem;
+    flex: 1; /* equal columns that fill the card, like the More from My Desk grid */
   }
 
   .project-highlight {
     display: flex;
-    justify-content: space-evenly;
+    gap: 2rem; /* consistent column spacing (matches .project-highlights) instead of width-driven space-evenly */
   }
 }
 
@@ -154,7 +154,13 @@ body {
 /* Experience Section */
 .experience {
   padding: 6rem 0;
-  background: rgba(255, 255, 255, 0.05);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 12%,
+    rgba(255, 255, 255, 0.05) 88%,
+    transparent 100%
+  );
   backdrop-filter: blur(10px);
 }
 
@@ -250,6 +256,18 @@ body {
   padding: 2.5rem;
 }
 
+/* Lift-on-hover for the three main Past Experience boxes only (direct children,
+   so the nested .experience-item bullet cards are unaffected). Matches the
+   .project-highlight effect used by More from My Desk. */
+.experience-list > .experience-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-list > .experience-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
 .exp-header {
   display: flex;
   justify-content: space-between;
@@ -305,7 +323,13 @@ body {
 /* About Section */
 .about {
   padding: 6rem 0;
-  background: rgba(255, 255, 255, 0.03);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 12%,
+    rgba(255, 255, 255, 0.03) 88%,
+    transparent 100%
+  );
 }
 
 .about-content {
@@ -350,7 +374,13 @@ body {
 /* Contact Section */
 .contact {
   padding: 6rem 0;
-  background: rgba(0, 0, 0, 0.1);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 12%,
+    rgba(0, 0, 0, 0.1) 88%,
+    transparent 100%
+  );
 }
 
 .contact-content {
@@ -457,7 +487,7 @@ body {
   .project-highlight, .experience-item, .education, .awards {
     padding: 1.5rem;
   }
-  
+
   .hero-title {
     font-size: 2.5rem;
   }

@@ -1,58 +1,48 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const BulletPoint = ({ bulletPoint, index, isExpanded, setExpandedBullet }) => {
+const BulletPoint = ({ bulletPoint, isExpanded, setExpandedBullet }) => {
   const { title, expandedBody } = bulletPoint;
   const iconName = isExpanded ? 'open_circle' : 'closed_circle';
 
+  const toggle = () => setExpandedBullet(isExpanded ? null : title);
+
   return (
-    <div className={`flex items-start transition-all duration-300 my-3 ${isExpanded ? 'h-auto' : 'h-12'}`}>
-      {/* Company circle - much smaller when closed */}
+    <div className="mb-3">
+      {/* Header row - stays full width in both states (no width morph) */}
+      <button
+        type="button"
+        onClick={toggle}
+        aria-expanded={isExpanded}
+        className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left text-white cursor-pointer transition-colors duration-200 hover:bg-white/10 focus:outline-none"
+      >
+        <img
+          src={`images/${iconName}.png`}
+          className="w-6 h-6 flex-shrink-0"
+          alt=""
+          aria-hidden="true"
+        />
+        <span className="flex-1 leading-snug">{title}</span>
+      </button>
+
+      {/* Collapsible body - grid-rows 0fr->1fr animates height:auto smoothly */}
       <div
-        className={`relative flex-shrink-0 text-white rounded-full flex items-center justify-center cursor-pointer transition-all duration-500 ease-in-out hover:shadow-lg ${
-          isExpanded 
-            ? 'w-16 h-16' 
-            : 'w-full h-12 hover:scale-110 px-5'
-        }`}
-        onClick={() => isExpanded ? setExpandedBullet(null) : setExpandedBullet(title)}
-      >
-        <div className={`flex absolute ${isExpanded ? 'left-15' : 'left-6'}`}>
-          <img 
-            src={`images/${iconName}.png`}
-            className={`transition-all duration-300 ${
-              isExpanded ? 'w-8 h-8' : 'w-6 h-6 mr-3'
-            }`}
-            alt="Company logo"
-            />
-          {!isExpanded && <div className="text-white text-wrap">{title}</div>}
-        </div>
-      </div>
-      {/* Expanded Text - only takes space when expanded */}
-      <div 
-        className={`transition-all duration-500 ease-in-out overflow-hidden ${
-          isExpanded 
-            ? 'ml-4 max-w-2xl opacity-100 max-h-screen' 
-            : 'ml-0 max-w-0 opacity-0 max-h-0'
+        className={`grid transition-all duration-500 ease-in-out ${
+          isExpanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
         }`}
       >
-        <div className="experience-item rounded-lg shadow-lg p-6">
-          <div 
-            key={index}
-            className={`flex items-start transition-all duration-300`}
-            style={{
-              transitionDelay: isExpanded ? `${index * 100}ms` : '0ms',
-              opacity: isExpanded ? 1 : 0,
-              transform: isExpanded ? 'translateY(0)' : 'translateY(10px)'
-            }}
-          >
-            <div className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></div>
-            <span className="text-white leading-relaxed">{expandedBody}</span>
+        <div className="overflow-hidden">
+          <div className="experience-item rounded-lg shadow-lg p-6 mt-2 ml-9">
+            <div className="flex items-start">
+              <div className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></div>
+              <span className="text-white leading-relaxed">{expandedBody}</span>
+            </div>
+            <button
+              onClick={() => setExpandedBullet(null)}
+              className="mt-6 px-4 py-2 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm"
+            >
+              Close
+            </button>
           </div>
-          <button
-            onClick={() => setExpandedBullet(null)}
-            className="mt-6 px-4 py-2 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm"
-          >
-            Close
-          </button>
         </div>
       </div>
     </div>

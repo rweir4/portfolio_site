@@ -24,8 +24,8 @@ const Portfolio = () => (
     <Header />
     <Hero />
     <AIChatBotShowcase projectInfo={CHATBOX_INFO} title={CHATBOX_TITLE} />
-    <CartridgeShowcase />
     <Experience />
+    <CartridgeShowcase />
     <About />
     <Contact />
   </div>
