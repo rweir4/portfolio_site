@@ -566,7 +566,7 @@ var CurrentRole = () => /* @__PURE__ */ jsx10("section", { id: "current", classN
       ", modernizing data models and the interfaces that serve millions of Veterans \u2014 with a constant focus on",
       " ",
       /* @__PURE__ */ jsx10("strong", { children: "privacy, security, and reliability" }),
-      ". Out of respect for the platform's security requirements, I keep the specifics intentionally high-level."
+      "."
     ] })
   ] })
 ] }) });

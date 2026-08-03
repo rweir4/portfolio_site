@@ -17,8 +17,7 @@ const CurrentRole = () => (
           technical design that guides the team's implementation) to hands-on{' '}
           <strong>frontend development</strong>, modernizing data models and the
           interfaces that serve millions of Veterans — with a constant focus on{' '}
-          <strong>privacy, security, and reliability</strong>. Out of respect for the
-          platform's security requirements, I keep the specifics intentionally high-level.
+          <strong>privacy, security, and reliability</strong>.
         </p>
       </div>
     </div>
