@@ -154,14 +154,6 @@ body {
 /* Experience Section */
 .experience {
   padding: 6rem 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(255, 255, 255, 0.05) 12%,
-    rgba(255, 255, 255, 0.05) 88%,
-    transparent 100%
-  );
-  backdrop-filter: blur(10px);
 }
 
 /* Project Highlights */
@@ -323,13 +315,6 @@ body {
 /* About Section */
 .about {
   padding: 6rem 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(255, 255, 255, 0.03) 12%,
-    rgba(255, 255, 255, 0.03) 88%,
-    transparent 100%
-  );
 }
 
 .about-content {
@@ -374,13 +359,6 @@ body {
 /* Contact Section */
 .contact {
   padding: 6rem 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.1) 12%,
-    rgba(0, 0, 0, 0.1) 88%,
-    transparent 100%
-  );
 }
 
 .contact-content {
