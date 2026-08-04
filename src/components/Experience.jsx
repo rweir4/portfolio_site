@@ -28,7 +28,10 @@ const Experience = () => {
   return (
     <section id="work" className="experience">
       <div className="container">
-        <h2 className="section-title">More from My Desk</h2>
+        <div className="section-head">
+          <span className="eyebrow">Selected work</span>
+          <h2 className="section-title">More from My Desk</h2>
+        </div>
         <div className="project-highlights">
           <ProjectHighlight
             title="Clinical Trial Authorization System"
@@ -53,18 +56,21 @@ const Experience = () => {
           />
         </div>
         
-        <h2 className="section-title">Past Experience</h2>
-        <div className="experience-list">
+        <div className="section-head" id="experience">
+          <span className="eyebrow">Timeline</span>
+          <h2 className="section-title">Past Experience</h2>
+        </div>
+        <div className="timeline">
           {EXPERIENCES.map((exp, index) => (
-            <div key={index} className="experience-item">
-              <div className="exp-header">
-                <div>
-                  <h3 className="exp-title">{exp.title}</h3>
-                  <h4 className="exp-company">{exp.company} | {exp.location}</h4>
-                </div>
-                <div className="exp-period">{exp.period}</div>
+            <div key={index} className="tl-item">
+              <div className="tl-idx">
+                {String(index + 1).padStart(2, '0')} / {exp.period}
               </div>
-              <div className="exp-highlights">
+              <h3 className="tl-role">{exp.title}</h3>
+              <div className="tl-co">
+                {exp.company} <span className="dot">◆</span> {exp.location}
+              </div>
+              <div className="tl-bullets">
                 <BulletList
                   bullets={exp.highlights}
                   expandedBullet={expandedBullet}

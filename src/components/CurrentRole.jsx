@@ -1,8 +1,11 @@
 const CurrentRole = () => (
   <section id="current" className="current-role">
     <div className="container">
-      <h2 className="section-title">Currently</h2>
-      <div className="current-role-card">
+      <div className="section-head">
+        <span className="eyebrow">Now</span>
+        <h2 className="section-title">Currently</h2>
+      </div>
+      <div className="current-role-card glass">
         <div className="current-role-header">
           <div>
             <h3 className="current-role-title">Senior Fullstack Engineer</h3>

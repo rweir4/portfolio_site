@@ -9,27 +9,18 @@ import React from "react";
 import { jsx, jsxs } from "react/jsx-runtime";
 var BulletPoint = ({ bulletPoint, isExpanded, setExpandedBullet }) => {
   const { title, expandedBody } = bulletPoint;
-  const iconName = isExpanded ? "open_circle" : "closed_circle";
   const toggle = () => setExpandedBullet(isExpanded ? null : title);
-  return /* @__PURE__ */ jsxs("div", { className: "mb-3", children: [
+  return /* @__PURE__ */ jsxs("div", { className: "bl-item", children: [
     /* @__PURE__ */ jsxs(
       "button",
       {
         type: "button",
         onClick: toggle,
         "aria-expanded": isExpanded,
-        className: "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left text-white cursor-pointer transition-colors duration-200 hover:bg-white/10 focus:outline-none",
+        className: "bl-summary",
         children: [
-          /* @__PURE__ */ jsx(
-            "img",
-            {
-              src: `images/${iconName}.png`,
-              className: "w-6 h-6 flex-shrink-0",
-              alt: "",
-              "aria-hidden": "true"
-            }
-          ),
-          /* @__PURE__ */ jsx("span", { className: "flex-1 leading-snug", children: title })
+          /* @__PURE__ */ jsx("span", { className: "bl-marker", "aria-hidden": "true", children: isExpanded ? "\u2013" : "+" }),
+          /* @__PURE__ */ jsx("span", { className: "bl-title", children: title })
         ]
       }
     ),
@@ -37,20 +28,7 @@ var BulletPoint = ({ bulletPoint, isExpanded, setExpandedBullet }) => {
       "div",
       {
         className: `grid transition-all duration-500 ease-in-out ${isExpanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`,
-        children: /* @__PURE__ */ jsx("div", { className: "overflow-hidden", children: /* @__PURE__ */ jsxs("div", { className: "experience-item rounded-lg shadow-lg p-6 mt-2 ml-9", children: [
-          /* @__PURE__ */ jsxs("div", { className: "flex items-start", children: [
-            /* @__PURE__ */ jsx("div", { className: "w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0" }),
-            /* @__PURE__ */ jsx("span", { className: "text-white leading-relaxed", children: expandedBody })
-          ] }),
-          /* @__PURE__ */ jsx(
-            "button",
-            {
-              onClick: () => setExpandedBullet(null),
-              className: "mt-6 px-4 py-2 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm",
-              children: "Close"
-            }
-          )
-        ] }) })
+        children: /* @__PURE__ */ jsx("div", { className: "overflow-hidden", children: /* @__PURE__ */ jsx("p", { className: "bl-body", children: expandedBody }) })
       }
     )
   ] });
@@ -200,7 +178,10 @@ var ProjectHighlight = ({ title, company, period, description, tech }) => {
 var Experience = () => {
   const [expandedBullet, setExpandedBullet] = useState(null);
   return /* @__PURE__ */ jsx3("section", { id: "work", className: "experience", children: /* @__PURE__ */ jsxs2("div", { className: "container", children: [
-    /* @__PURE__ */ jsx3("h2", { className: "section-title", children: "More from My Desk" }),
+    /* @__PURE__ */ jsxs2("div", { className: "section-head", children: [
+      /* @__PURE__ */ jsx3("span", { className: "eyebrow", children: "Selected work" }),
+      /* @__PURE__ */ jsx3("h2", { className: "section-title", children: "More from My Desk" })
+    ] }),
     /* @__PURE__ */ jsxs2("div", { className: "project-highlights", children: [
       /* @__PURE__ */ jsx3(
         ProjectHighlight,
@@ -233,20 +214,25 @@ var Experience = () => {
         }
       )
     ] }),
-    /* @__PURE__ */ jsx3("h2", { className: "section-title", children: "Past Experience" }),
-    /* @__PURE__ */ jsx3("div", { className: "experience-list", children: EXPERIENCES.map((exp, index) => /* @__PURE__ */ jsxs2("div", { className: "experience-item", children: [
-      /* @__PURE__ */ jsxs2("div", { className: "exp-header", children: [
-        /* @__PURE__ */ jsxs2("div", { children: [
-          /* @__PURE__ */ jsx3("h3", { className: "exp-title", children: exp.title }),
-          /* @__PURE__ */ jsxs2("h4", { className: "exp-company", children: [
-            exp.company,
-            " | ",
-            exp.location
-          ] })
-        ] }),
-        /* @__PURE__ */ jsx3("div", { className: "exp-period", children: exp.period })
+    /* @__PURE__ */ jsxs2("div", { className: "section-head", id: "experience", children: [
+      /* @__PURE__ */ jsx3("span", { className: "eyebrow", children: "Timeline" }),
+      /* @__PURE__ */ jsx3("h2", { className: "section-title", children: "Past Experience" })
+    ] }),
+    /* @__PURE__ */ jsx3("div", { className: "timeline", children: EXPERIENCES.map((exp, index) => /* @__PURE__ */ jsxs2("div", { className: "tl-item", children: [
+      /* @__PURE__ */ jsxs2("div", { className: "tl-idx", children: [
+        String(index + 1).padStart(2, "0"),
+        " / ",
+        exp.period
       ] }),
-      /* @__PURE__ */ jsx3("div", { className: "exp-highlights", children: /* @__PURE__ */ jsx3(
+      /* @__PURE__ */ jsx3("h3", { className: "tl-role", children: exp.title }),
+      /* @__PURE__ */ jsxs2("div", { className: "tl-co", children: [
+        exp.company,
+        " ",
+        /* @__PURE__ */ jsx3("span", { className: "dot", children: "\u25C6" }),
+        " ",
+        exp.location
+      ] }),
+      /* @__PURE__ */ jsx3("div", { className: "tl-bullets", children: /* @__PURE__ */ jsx3(
         BulletList_default,
         {
           bullets: exp.highlights,
@@ -262,11 +248,14 @@ var Experience_default = Experience;
 // src/components/Contact.jsx
 import { jsx as jsx4, jsxs as jsxs3 } from "react/jsx-runtime";
 var Contact = () => /* @__PURE__ */ jsx4("section", { id: "contact", className: "contact", children: /* @__PURE__ */ jsxs3("div", { className: "container", children: [
-  /* @__PURE__ */ jsx4("h2", { className: "section-title", children: "Let's Connect" }),
+  /* @__PURE__ */ jsxs3("div", { className: "section-head", children: [
+    /* @__PURE__ */ jsx4("span", { className: "eyebrow", children: "Contact" }),
+    /* @__PURE__ */ jsx4("h2", { className: "section-title", children: "Let's Connect" })
+  ] }),
   /* @__PURE__ */ jsxs3("div", { className: "contact-content", children: [
     /* @__PURE__ */ jsx4("p", { className: "contact-description", children: "I'm always interested in discussing new opportunities, innovative projects, or just chatting about technology." }),
     /* @__PURE__ */ jsxs3("div", { className: "contact-links", children: [
-      /* @__PURE__ */ jsx4("a", { href: "mailto:rebeccaweir12@gmail.com", className: "contact-link", children: "rebeccaweir12@gmail.com" }),
+      /* @__PURE__ */ jsx4("a", { href: "mailto:rebeccaweir12@gmail.com", className: "contact-link primary", children: "rebeccaweir12@gmail.com" }),
       /* @__PURE__ */ jsx4("a", { href: "https://www.linkedin.com/in/rebeccalweir/", className: "contact-link", target: "_blank", rel: "noopener noreferrer", children: "LinkedIn Profile" }),
       /* @__PURE__ */ jsx4("a", { href: "https://github.com/rweir4", className: "contact-link", target: "_blank", rel: "noopener noreferrer", children: "Github Profile" })
     ] })
@@ -277,7 +266,10 @@ var Contact_default = Contact;
 // src/components/About.jsx
 import { jsx as jsx5, jsxs as jsxs4 } from "react/jsx-runtime";
 var About = () => /* @__PURE__ */ jsx5("section", { id: "about", className: "about", children: /* @__PURE__ */ jsx5("div", { className: "container", children: /* @__PURE__ */ jsx5("div", { className: "about-content", children: /* @__PURE__ */ jsxs4("div", { className: "about-text", children: [
-  /* @__PURE__ */ jsx5("h2", { className: "section-title", children: "About Rebecca" }),
+  /* @__PURE__ */ jsxs4("div", { className: "section-head", children: [
+    /* @__PURE__ */ jsx5("span", { className: "eyebrow", children: "Profile" }),
+    /* @__PURE__ */ jsx5("h2", { className: "section-title", children: "About Rebecca" })
+  ] }),
   /* @__PURE__ */ jsx5("p", { children: "I'm a software engineer with 8+ years of experience building scalable, user-focused applications. I've had the privilege of working at innovative companies like Vimeo and Medidata Solutions, where I've led teams, mentored engineers, and delivered systems that serve millions of users. I'm passionate about clean architecture, performance optimization, and creating technology that makes a real difference." }),
   /* @__PURE__ */ jsx5("p", { children: "Studying Molecular Biophysics at the University of Tennessee taught me how to look at complex systems through both a scientific and computational lens. In the lab, I learned how to break down intricate biological processes into models and experiments. Today, I apply that same approach to engineering\u2014dissecting problems, identifying patterns, and building solutions that work at scale. It\u2019s a perspective that helps me bring both rigor and creativity to technical challenges." }),
   /* @__PURE__ */ jsxs4("div", { className: "credentials", children: [
@@ -326,12 +318,12 @@ var SourcesList = ({ sources }) => /* @__PURE__ */ jsxs5("details", { className:
     ] })
   ] }, i)) })
 ] });
-var ChatHeader = ({ onClose }) => /* @__PURE__ */ jsxs5("div", { className: "bg-gradient-to-r from-[var(--rweir-brand)] to-[#3db9cc] text-white p-4 flex items-center justify-between", children: [
+var ChatHeader = ({ onClose }) => /* @__PURE__ */ jsxs5("div", { className: "bg-gradient-to-r from-[var(--rweir-brand)] to-[#0A565E] text-white p-4 flex items-center justify-between", children: [
   /* @__PURE__ */ jsxs5("div", { className: "flex items-center gap-3", children: [
     /* @__PURE__ */ jsx6("div", { className: "w-10 h-10 rounded-full overflow-hidden ring-2 ring-white/30", children: /* @__PURE__ */ jsx6("img", { src: "images/profile_pic.png", alt: "Profile", className: "w-full h-full object-cover" }) }),
     /* @__PURE__ */ jsxs5("div", { children: [
       /* @__PURE__ */ jsx6("h3", { className: "font-semibold", children: "Ask About Me" }),
-      /* @__PURE__ */ jsx6("p", { className: "text-xs text-blue-100", children: "Powered by Claude" })
+      /* @__PURE__ */ jsx6("p", { className: "text-xs text-white/70", children: "Powered by Claude" })
     ] })
   ] }),
   /* @__PURE__ */ jsx6("button", { onClick: onClose, className: "text-white/80 hover:text-white transition-colors", "aria-label": "Close chat", children: /* @__PURE__ */ jsx6("svg", { className: "w-6 h-6", fill: "none", stroke: "currentColor", viewBox: "0 0 24 24", children: /* @__PURE__ */ jsx6("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M6 18L18 6M6 6l12 12" }) }) })
@@ -407,7 +399,7 @@ var ChatbotWidget = () => {
       setIsOpen(true);
       setShowTooltip(false);
     }, className: "relative group", "aria-label": "Open chat", children: [
-      /* @__PURE__ */ jsx6("div", { className: "w-16 h-16 rounded-full overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ring-2 ring-blue-500/20 hover:ring-blue-500/40", children: /* @__PURE__ */ jsx6("img", { src: "images/chat.png", alt: "Chat", className: "max-w-full max-h-full object-contain" }) }),
+      /* @__PURE__ */ jsx6("div", { className: "w-16 h-16 rounded-full overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ring-2 ring-[rgba(12,107,117,0.25)] hover:ring-[rgba(12,107,117,0.5)]", children: /* @__PURE__ */ jsx6("img", { src: "images/chat.png", alt: "Chat", className: "max-w-full max-h-full object-contain" }) }),
       showTooltip && /* @__PURE__ */ jsx6("div", { className: "absolute bottom-full right-0 mb-4 animate-pulse", children: /* @__PURE__ */ jsxs5("div", { className: "bg-gray-900 text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap shadow-lg", children: [
         "ask about me",
         /* @__PURE__ */ jsx6("div", { className: "absolute top-full right-4 w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-gray-900" })
@@ -435,19 +427,42 @@ var ChatbotWidget_default = ChatbotWidget;
 // src/components/Hero.jsx
 import { jsx as jsx7, jsxs as jsxs6 } from "react/jsx-runtime";
 var Hero = () => /* @__PURE__ */ jsxs6("section", { className: "hero", children: [
-  /* @__PURE__ */ jsxs6("div", { className: "hero-content", children: [
-    /* @__PURE__ */ jsxs6("h1", { className: "hero-title", children: [
-      "Hello,",
-      /* @__PURE__ */ jsx7("br", {}),
-      "I'm Rebecca Weir.",
-      /* @__PURE__ */ jsx7("br", {}),
-      "I'm a senior full-stack software engineer."
+  /* @__PURE__ */ jsxs6("div", { className: "hero-inner", children: [
+    /* @__PURE__ */ jsxs6("div", { className: "hero-main", children: [
+      /* @__PURE__ */ jsx7("span", { className: "eyebrow rise d1", children: "Senior Full-Stack Engineer \xB7 Since 2017" }),
+      /* @__PURE__ */ jsx7("h1", { className: "hero-title rise d2", children: "Rebecca Weir" }),
+      /* @__PURE__ */ jsxs6("p", { className: "hero-thesis rise d3", children: [
+        "I build software the way I once characterized molecules \u2014 by studying its behavior, defining clear boundaries, and ",
+        /* @__PURE__ */ jsx7("em", { children: "designing systems that hold together." })
+      ] }),
+      /* @__PURE__ */ jsxs6("div", { className: "hero-cta rise d4", children: [
+        /* @__PURE__ */ jsx7("a", { href: "#contact", className: "btn btn-solid", children: "Get in touch" }),
+        /* @__PURE__ */ jsx7("a", { href: "#work", className: "btn btn-ghost", children: "View selected work" })
+      ] }),
+      /* @__PURE__ */ jsxs6("div", { className: "readout glass rise d4", children: [
+        /* @__PURE__ */ jsxs6("div", { className: "cell", children: [
+          /* @__PURE__ */ jsx7("span", { className: "num", children: "8+" }),
+          /* @__PURE__ */ jsx7("span", { className: "lab", children: "Years shipping" })
+        ] }),
+        /* @__PURE__ */ jsxs6("div", { className: "cell", children: [
+          /* @__PURE__ */ jsx7("span", { className: "num", children: "13M+" }),
+          /* @__PURE__ */ jsx7("span", { className: "lab", children: "Vimeo users served" })
+        ] }),
+        /* @__PURE__ */ jsxs6("div", { className: "cell", children: [
+          /* @__PURE__ */ jsx7("span", { className: "num", children: "VA.gov" }),
+          /* @__PURE__ */ jsx7("span", { className: "lab", children: "Currently building" })
+        ] })
+      ] })
     ] }),
-    /* @__PURE__ */ jsx7("p", { className: "hero-subtitle", children: "I\u2019ve spent the last 8+ years building scalable apps and leading teams at Agile 6, Medidata, and Vimeo." }),
-    /* @__PURE__ */ jsx7("p", { className: "hero-description", children: "I value clarity, innovation, and collaboration above all else. These ideals guide my approach to problem solving and engineering excellence." })
+    /* @__PURE__ */ jsxs6("div", { className: "hero-figure rise d3", children: [
+      /* @__PURE__ */ jsx7("div", { className: "key", "aria-hidden": "true" }),
+      /* @__PURE__ */ jsxs6("div", { className: "frame", children: [
+        /* @__PURE__ */ jsx7("img", { src: "images/profile_pic.png", alt: "Rebecca Weir" }),
+        /* @__PURE__ */ jsx7("span", { className: "cap", children: "Fig. 1 \u2014 R. Weir" })
+      ] })
+    ] })
   ] }),
-  /* @__PURE__ */ jsx7(ChatbotWidget_default, {}),
-  /* @__PURE__ */ jsx7("img", { className: "hero-profile-pic", src: "images/profile_pic.png" })
+  /* @__PURE__ */ jsx7(ChatbotWidget_default, {})
 ] });
 var Hero_default = Hero;
 
@@ -460,8 +475,11 @@ var ProjectCard = ({ category }) => /* @__PURE__ */ jsxs7("div", { className: "s
     /* @__PURE__ */ jsx8("div", { children: category.tooltipContent?.map((info) => /* @__PURE__ */ jsx8("p", { children: info }, info)) })
   ] })
 ] });
-var AIChatBotShowcase = ({ projectInfo, title }) => /* @__PURE__ */ jsxs7("div", { className: "project-showcase container", children: [
-  /* @__PURE__ */ jsx8("h2", { className: "section-title", children: title }),
+var AIChatBotShowcase = ({ projectInfo, title }) => /* @__PURE__ */ jsxs7("div", { className: "project-showcase", children: [
+  /* @__PURE__ */ jsxs7("div", { className: "section-head", children: [
+    /* @__PURE__ */ jsx8("span", { className: "eyebrow", children: "Under the hood" }),
+    /* @__PURE__ */ jsx8("h2", { className: "section-title", children: title })
+  ] }),
   /* @__PURE__ */ jsx8("div", { className: "project-highlight flex flex-col sm:flex-row gap-8", children: projectInfo.map((category) => /* @__PURE__ */ jsx8(ProjectCard, { category }, category.title)) })
 ] });
 var AIChatBotShowcase_default = AIChatBotShowcase;
@@ -511,44 +529,51 @@ var ScreenshotCarousel = () => {
       {
         src: screenshots[index].src,
         alt: screenshots[index].caption,
-        className: "w-full h-full object-cover rounded-3xl border border-white/15 shadow-2xl transition-opacity duration-150",
+        className: "w-full h-full object-cover rounded-3xl border border-[var(--line)] shadow-2xl transition-opacity duration-150",
         style: { opacity: fading ? 0 : 1 }
       }
     ) }),
-    /* @__PURE__ */ jsx9("span", { className: "text-white/70 text-sm font-medium", children: screenshots[index].caption }),
+    /* @__PURE__ */ jsx9("span", { className: "text-[var(--meta)] text-sm font-medium", style: { fontFamily: "var(--mono)" }, children: screenshots[index].caption }),
     /* @__PURE__ */ jsxs8("div", { className: "flex items-center gap-6", children: [
-      /* @__PURE__ */ jsx9("button", { onClick: prev, className: "w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-colors", children: "\u2190" }),
+      /* @__PURE__ */ jsx9("button", { onClick: prev, "aria-label": "Previous screenshot", className: "w-10 h-10 rounded-full bg-[var(--surface)] border border-[var(--line)] text-[var(--petrol)] hover:bg-[rgba(12,107,117,0.08)] transition-colors", children: "\u2190" }),
       /* @__PURE__ */ jsx9("div", { className: "flex gap-2 items-center", children: screenshots.map((_, i) => /* @__PURE__ */ jsx9(
         "button",
         {
           onClick: () => setIndex(i),
-          className: `h-2 rounded-full border-none cursor-pointer transition-all duration-300 ${i === index ? "w-5 bg-white" : "w-2 bg-white/35"}`
+          "aria-label": `Go to screenshot ${i + 1}`,
+          className: `h-2 rounded-full border-none cursor-pointer transition-all duration-300 ${i === index ? "w-5 bg-[var(--petrol)]" : "w-2 bg-[var(--line)]"}`
         },
         i
       )) }),
-      /* @__PURE__ */ jsx9("button", { onClick: next, className: "w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-colors", children: "\u2192" })
+      /* @__PURE__ */ jsx9("button", { onClick: next, "aria-label": "Next screenshot", className: "w-10 h-10 rounded-full bg-[var(--surface)] border border-[var(--line)] text-[var(--petrol)] hover:bg-[rgba(12,107,117,0.08)] transition-colors", children: "\u2192" })
     ] })
   ] });
 };
-var CartridgeShowcase = () => /* @__PURE__ */ jsx9("div", { className: "container mx-auto px-8", children: /* @__PURE__ */ jsx9("div", { className: "bg-white/10 backdrop-blur border border-white/20 rounded-2xl", children: /* @__PURE__ */ jsxs8("div", { className: "flex flex-col md:flex-row items-center gap-8 p-6 md:p-20", children: [
-  /* @__PURE__ */ jsxs8("div", { className: "flex-1 pr-0 md:pr-8", children: [
-    /* @__PURE__ */ jsxs8("div", { className: "mb-6", children: [
-      /* @__PURE__ */ jsx9("h2", { className: "section-title", children: "Cartridge - Mobile App" }),
-      /* @__PURE__ */ jsx9("h3", { className: "text-3xl font-semibold text-white mb-1", children: "Goodreads for Gamers" }),
-      /* @__PURE__ */ jsx9("p", { className: "text-white/80 text-lg", children: "Mobile Game Logging App \xB7 Personal Project" })
+var CartridgeShowcase = () => /* @__PURE__ */ jsx9("section", { className: "cartridge", children: /* @__PURE__ */ jsxs8("div", { className: "container", children: [
+  /* @__PURE__ */ jsx9("div", { className: "section-head", children: /* @__PURE__ */ jsx9("span", { className: "eyebrow", children: "Side project" }) }),
+  /* @__PURE__ */ jsx9("div", { className: "cartridge-card", children: /* @__PURE__ */ jsxs8("div", { className: "flex flex-col md:flex-row items-center gap-8 p-6 md:p-14", children: [
+    /* @__PURE__ */ jsxs8("div", { className: "flex-1 pr-0 md:pr-8", children: [
+      /* @__PURE__ */ jsxs8("div", { className: "mb-6", children: [
+        /* @__PURE__ */ jsx9("h2", { className: "section-title", style: { marginTop: 0 }, children: "Cartridge \u2014 Mobile App" }),
+        /* @__PURE__ */ jsx9("h3", { className: "text-2xl md:text-3xl font-semibold text-[var(--ink)] mt-2 mb-1", style: { fontFamily: "var(--serif)" }, children: "Goodreads for Gamers" }),
+        /* @__PURE__ */ jsx9("p", { className: "text-[var(--muted)] text-lg", style: { fontFamily: "var(--mono)", fontSize: ".85rem", letterSpacing: ".03em" }, children: "Mobile Game Logging App \xB7 Personal Project" })
+      ] }),
+      /* @__PURE__ */ jsx9("ul", { className: "list-none space-y-4 mb-6", children: highlights.map((highlight) => /* @__PURE__ */ jsx9("li", { className: "text-[var(--muted)] leading-relaxed pl-6 relative before:content-['\u2192'] before:absolute before:left-0 before:text-[var(--petrol)] before:font-bold", children: highlight }, highlight)) }),
+      /* @__PURE__ */ jsx9("div", { className: "flex flex-wrap gap-2", children: techStack.map((tech) => /* @__PURE__ */ jsx9("span", { className: "chip", children: tech }, tech)) })
     ] }),
-    /* @__PURE__ */ jsx9("ul", { className: "list-none space-y-4 mb-6", children: highlights.map((hightlight) => /* @__PURE__ */ jsx9("li", { className: "text-white/90 leading-relaxed pl-6 relative before:content-['\u2192'] before:absolute before:left-0 before:text-white/60 before:font-bold", children: hightlight }, hightlight)) }),
-    /* @__PURE__ */ jsx9("div", { className: "flex flex-wrap gap-2", children: techStack.map((tech) => /* @__PURE__ */ jsx9("span", { className: "bg-white/15 border border-white/20 text-white px-3 py-1 rounded-full text-xs font-medium", children: tech }, tech)) })
-  ] }),
-  /* @__PURE__ */ jsx9(ScreenshotCarousel, {})
-] }) }) });
+    /* @__PURE__ */ jsx9(ScreenshotCarousel, {})
+  ] }) })
+] }) });
 var CartridgeShowcase_default = CartridgeShowcase;
 
 // src/components/CurrentRole.jsx
 import { jsx as jsx10, jsxs as jsxs9 } from "react/jsx-runtime";
 var CurrentRole = () => /* @__PURE__ */ jsx10("section", { id: "current", className: "current-role", children: /* @__PURE__ */ jsxs9("div", { className: "container", children: [
-  /* @__PURE__ */ jsx10("h2", { className: "section-title", children: "Currently" }),
-  /* @__PURE__ */ jsxs9("div", { className: "current-role-card", children: [
+  /* @__PURE__ */ jsxs9("div", { className: "section-head", children: [
+    /* @__PURE__ */ jsx10("span", { className: "eyebrow", children: "Now" }),
+    /* @__PURE__ */ jsx10("h2", { className: "section-title", children: "Currently" })
+  ] }),
+  /* @__PURE__ */ jsxs9("div", { className: "current-role-card glass", children: [
     /* @__PURE__ */ jsxs9("div", { className: "current-role-header", children: [
       /* @__PURE__ */ jsxs9("div", { children: [
         /* @__PURE__ */ jsx10("h3", { className: "current-role-title", children: "Senior Fullstack Engineer" }),
@@ -621,20 +646,24 @@ var CHATBOX_TITLE = "AI Portfolio Assistant";
 
 // src/App.jsx
 import { jsx as jsx11, jsxs as jsxs10 } from "react/jsx-runtime";
-var Header = () => /* @__PURE__ */ jsx11("header", { className: "header", children: /* @__PURE__ */ jsxs10("nav", { className: "nav", children: [
-  /* @__PURE__ */ jsx11("div", { className: "logo", children: "RW" }),
-  /* @__PURE__ */ jsxs10("div", { className: "nav-links", children: [
+var Header = () => /* @__PURE__ */ jsx11("header", { className: "header", children: /* @__PURE__ */ jsx11("div", { className: "container", children: /* @__PURE__ */ jsxs10("div", { className: "nav-in glass", children: [
+  /* @__PURE__ */ jsxs10("a", { href: "#top", className: "wordmark", children: [
+    "Rebecca ",
+    /* @__PURE__ */ jsx11("b", { children: "Weir" })
+  ] }),
+  /* @__PURE__ */ jsxs10("nav", { className: "nav-links", children: [
     /* @__PURE__ */ jsx11("a", { href: "#work", children: "Work" }),
     /* @__PURE__ */ jsx11("a", { href: "#about", children: "About" }),
-    /* @__PURE__ */ jsx11("a", { href: "#contact", children: "Contact" })
+    /* @__PURE__ */ jsx11("a", { href: "#contact", className: "nav-cta", children: "Get in touch" })
   ] })
-] }) });
-var Portfolio = () => /* @__PURE__ */ jsxs10("div", { className: "portfolio", children: [
+] }) }) });
+var Portfolio = () => /* @__PURE__ */ jsxs10("div", { className: "portfolio", id: "top", children: [
+  /* @__PURE__ */ jsx11("div", { className: "site-bg", "aria-hidden": "true" }),
   /* @__PURE__ */ jsx11(Header, {}),
   /* @__PURE__ */ jsx11(Hero_default, {}),
-  /* @__PURE__ */ jsx11(AIChatBotShowcase_default, { projectInfo: CHATBOX_INFO, title: CHATBOX_TITLE }),
   /* @__PURE__ */ jsx11(CurrentRole_default, {}),
   /* @__PURE__ */ jsx11(Experience_default, {}),
+  /* @__PURE__ */ jsx11(AIChatBotShowcase_default, { projectInfo: CHATBOX_INFO, title: CHATBOX_TITLE }),
   /* @__PURE__ */ jsx11(CartridgeShowcase_default, {}),
   /* @__PURE__ */ jsx11(About_default, {}),
   /* @__PURE__ */ jsx11(Contact_default, {})

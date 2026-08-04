@@ -41,59 +41,63 @@ const ScreenshotCarousel = () => {
         <img
           src={screenshots[index].src}
           alt={screenshots[index].caption}
-          className="w-full h-full object-cover rounded-3xl border border-white/15 shadow-2xl transition-opacity duration-150"
+          className="w-full h-full object-cover rounded-3xl border border-[var(--line)] shadow-2xl transition-opacity duration-150"
           style={{ opacity: fading ? 0 : 1 }}
         />
       </div>
-      <span className="text-white/70 text-sm font-medium">
+      <span className="text-[var(--meta)] text-sm font-medium" style={{ fontFamily: 'var(--mono)' }}>
         {screenshots[index].caption}
       </span>
       <div className="flex items-center gap-6">
-        <button onClick={prev} className="w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-colors">←</button>
+        <button onClick={prev} aria-label="Previous screenshot" className="w-10 h-10 rounded-full bg-[var(--surface)] border border-[var(--line)] text-[var(--petrol)] hover:bg-[rgba(12,107,117,0.08)] transition-colors">←</button>
         <div className="flex gap-2 items-center">
           {screenshots.map((_, i) => (
             <button
               key={i}
               onClick={() => setIndex(i)}
-              className={`h-2 rounded-full border-none cursor-pointer transition-all duration-300 ${i === index ? 'w-5 bg-white' : 'w-2 bg-white/35'}`}
+              aria-label={`Go to screenshot ${i + 1}`}
+              className={`h-2 rounded-full border-none cursor-pointer transition-all duration-300 ${i === index ? 'w-5 bg-[var(--petrol)]' : 'w-2 bg-[var(--line)]'}`}
             />
           ))}
         </div>
-        <button onClick={next} className="w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-colors">→</button>
+        <button onClick={next} aria-label="Next screenshot" className="w-10 h-10 rounded-full bg-[var(--surface)] border border-[var(--line)] text-[var(--petrol)] hover:bg-[rgba(12,107,117,0.08)] transition-colors">→</button>
       </div>
     </div>
   );
 };
 
 const CartridgeShowcase = () => (
-  <div className="container mx-auto px-8">
-    <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl">
-      <div className="flex flex-col md:flex-row items-center gap-8 p-6 md:p-20">
-      <div className="flex-1 pr-0 md:pr-8">
-        <div className="mb-6">
-          <h2 className="section-title">Cartridge - Mobile App</h2>
-          <h3 className="text-3xl font-semibold text-white mb-1">Goodreads for Gamers</h3>
-          <p className="text-white/80 text-lg">Mobile Game Logging App · Personal Project</p>
-        </div>
-        <ul className="list-none space-y-4 mb-6">
-          {highlights.map(hightlight => (
-            <li key={hightlight} className="text-white/90 leading-relaxed pl-6 relative before:content-['→'] before:absolute before:left-0 before:text-white/60 before:font-bold">
-              {hightlight}
-            </li>
-          ))}
-        </ul>
-        <div className="flex flex-wrap gap-2">
-          {techStack.map(tech => (
-            <span key={tech} className="bg-white/15 border border-white/20 text-white px-3 py-1 rounded-full text-xs font-medium">
-              {tech}
-            </span>
-          ))}
-        </div>
+  <section className="cartridge">
+    <div className="container">
+      <div className="section-head">
+        <span className="eyebrow">Side project</span>
       </div>
-      <ScreenshotCarousel />
+      <div className="cartridge-card">
+        <div className="flex flex-col md:flex-row items-center gap-8 p-6 md:p-14">
+          <div className="flex-1 pr-0 md:pr-8">
+            <div className="mb-6">
+              <h2 className="section-title" style={{ marginTop: 0 }}>Cartridge — Mobile App</h2>
+              <h3 className="text-2xl md:text-3xl font-semibold text-[var(--ink)] mt-2 mb-1" style={{ fontFamily: 'var(--serif)' }}>Goodreads for Gamers</h3>
+              <p className="text-[var(--muted)] text-lg" style={{ fontFamily: 'var(--mono)', fontSize: '.85rem', letterSpacing: '.03em' }}>Mobile Game Logging App · Personal Project</p>
+            </div>
+            <ul className="list-none space-y-4 mb-6">
+              {highlights.map(highlight => (
+                <li key={highlight} className="text-[var(--muted)] leading-relaxed pl-6 relative before:content-['→'] before:absolute before:left-0 before:text-[var(--petrol)] before:font-bold">
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-wrap gap-2">
+              {techStack.map(tech => (
+                <span key={tech} className="chip">{tech}</span>
+              ))}
+            </div>
+          </div>
+          <ScreenshotCarousel />
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 );
 
 export default CartridgeShowcase;

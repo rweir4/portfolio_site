@@ -9,24 +9,27 @@ import { CHATBOX_INFO, CHATBOX_TITLE } from './constants';
 
 const Header = () => (
   <header className="header">
-    <nav className="nav">
-      <div className="logo">RW</div>
-      <div className="nav-links">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+    <div className="container">
+      <div className="nav-in glass">
+        <a href="#top" className="wordmark">Rebecca <b>Weir</b></a>
+        <nav className="nav-links">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact" className="nav-cta">Get in touch</a>
+        </nav>
       </div>
-    </nav>
+    </div>
   </header>
 );
 
 const Portfolio = () => (
-  <div className="portfolio">
+  <div className="portfolio" id="top">
+    <div className="site-bg" aria-hidden="true"></div>
     <Header />
     <Hero />
-    <AIChatBotShowcase projectInfo={CHATBOX_INFO} title={CHATBOX_TITLE} />
     <CurrentRole />
     <Experience />
+    <AIChatBotShowcase projectInfo={CHATBOX_INFO} title={CHATBOX_TITLE} />
     <CartridgeShowcase />
     <About />
     <Contact />

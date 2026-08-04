@@ -13,8 +13,11 @@ const ProjectCard = ({ category }) => (
 );
 
 const AIChatBotShowcase = ({ projectInfo, title }) => (
-  <div className='project-showcase container'>
-    <h2 className="section-title">{title}</h2>
+  <div className='project-showcase'>
+    <div className="section-head">
+      <span className="eyebrow">Under the hood</span>
+      <h2 className="section-title">{title}</h2>
+    </div>
     <div className="project-highlight flex flex-col sm:flex-row gap-8">
       {projectInfo.map(category => (
         <ProjectCard key={category.title} category={category} />

@@ -3,7 +3,10 @@ const About = () => (
     <div className="container">
       <div className="about-content">
         <div className="about-text">
-          <h2 className="section-title">About Rebecca</h2>
+          <div className="section-head">
+            <span className="eyebrow">Profile</span>
+            <h2 className="section-title">About Rebecca</h2>
+          </div>
           <p>
             I'm a software engineer with 8+ years of experience building scalable, 
             user-focused applications. I've had the privilege of working at innovative companies like Vimeo and 

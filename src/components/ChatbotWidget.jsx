@@ -40,14 +40,14 @@ const SourcesList = ({ sources }) => (
 );
 
 const ChatHeader = ({ onClose }) => (
-  <div className="bg-gradient-to-r from-[var(--rweir-brand)] to-[#3db9cc] text-white p-4 flex items-center justify-between">
+  <div className="bg-gradient-to-r from-[var(--rweir-brand)] to-[#0A565E] text-white p-4 flex items-center justify-between">
     <div className="flex items-center gap-3">
       <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-white/30">
         <img src="images/profile_pic.png" alt="Profile" className="w-full h-full object-cover" />
       </div>
       <div>
         <h3 className="font-semibold">Ask About Me</h3>
-        <p className="text-xs text-blue-100">Powered by Claude</p>
+        <p className="text-xs text-white/70">Powered by Claude</p>
       </div>
     </div>
     <button onClick={onClose} className="text-white/80 hover:text-white transition-colors" aria-label="Close chat">
@@ -140,7 +140,7 @@ const ChatbotWidget = () => {
       {!isOpen && (
         <div className="fixed bottom-8 right-8">
           <button onClick={() => { setIsOpen(true); setShowTooltip(false); }} className="relative group" aria-label="Open chat">
-            <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ring-2 ring-blue-500/20 hover:ring-blue-500/40">
+            <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ring-2 ring-[rgba(12,107,117,0.25)] hover:ring-[rgba(12,107,117,0.5)]">
               <img src="images/chat.png" alt="Chat" className="max-w-full max-h-full object-contain" />
             </div>
             {showTooltip && (
