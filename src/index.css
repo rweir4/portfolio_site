@@ -340,12 +340,14 @@ body {
   text-transform: uppercase; color: var(--meta); margin-bottom: .45rem;
 }
 .pub-title { margin-bottom: .7rem; }
-.pub-link {
+/* one outbound-link treatment, shared by citations and repo links */
+.pub-link, .repo-link {
   font-family: var(--mono); font-size: .8rem; color: var(--petrol);
   text-decoration: none; border-bottom: 1px solid transparent;
   transition: color .2s, border-color .2s;
 }
-.pub-link:hover { color: var(--petrol-2); border-bottom-color: currentColor; }
+.pub-link:hover, .repo-link:hover { color: var(--petrol-2); border-bottom-color: currentColor; }
+.repo-link { display: inline-block; margin-top: .9rem; }
 
 /* ============================================================
    Contact

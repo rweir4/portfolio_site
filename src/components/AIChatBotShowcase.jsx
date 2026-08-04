@@ -17,6 +17,14 @@ const AIChatBotShowcase = ({ projectInfo, title }) => (
     <div className="section-head">
       <span className="eyebrow">Under the hood</span>
       <h2 className="section-title">{title}</h2>
+      <a
+        className="repo-link"
+        href="https://github.com/rweir4/mybot"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View on GitHub →
+      </a>
     </div>
     <div className="project-highlight flex flex-col sm:flex-row gap-8">
       {projectInfo.map(category => (

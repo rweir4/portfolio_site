@@ -711,7 +711,8 @@ body {
 .pub-title {
   margin-bottom: .7rem;
 }
-.pub-link {
+.pub-link,
+.repo-link {
   font-family: var(--mono);
   font-size: .8rem;
   color: var(--petrol);
@@ -719,9 +720,14 @@ body {
   border-bottom: 1px solid transparent;
   transition: color .2s, border-color .2s;
 }
-.pub-link:hover {
+.pub-link:hover,
+.repo-link:hover {
   color: var(--petrol-2);
   border-bottom-color: currentColor;
+}
+.repo-link {
+  display: inline-block;
+  margin-top: .9rem;
 }
 .contact {
   padding: 5rem 0 6rem;

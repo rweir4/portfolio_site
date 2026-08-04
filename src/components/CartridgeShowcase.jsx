@@ -92,6 +92,14 @@ const CartridgeShowcase = () => (
                 <span key={tech} className="chip">{tech}</span>
               ))}
             </div>
+            <a
+              className="repo-link"
+              href="https://github.com/rweir4/cartridge"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub →
+            </a>
           </div>
           <ScreenshotCarousel />
         </div>

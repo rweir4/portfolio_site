@@ -549,7 +549,17 @@ var ProjectCard = ({ category }) => /* @__PURE__ */ jsxs8("div", { className: "s
 var AIChatBotShowcase = ({ projectInfo, title }) => /* @__PURE__ */ jsxs8("div", { className: "project-showcase", children: [
   /* @__PURE__ */ jsxs8("div", { className: "section-head", children: [
     /* @__PURE__ */ jsx9("span", { className: "eyebrow", children: "Under the hood" }),
-    /* @__PURE__ */ jsx9("h2", { className: "section-title", children: title })
+    /* @__PURE__ */ jsx9("h2", { className: "section-title", children: title }),
+    /* @__PURE__ */ jsx9(
+      "a",
+      {
+        className: "repo-link",
+        href: "https://github.com/rweir4/mybot",
+        target: "_blank",
+        rel: "noopener noreferrer",
+        children: "View on GitHub \u2192"
+      }
+    )
   ] }),
   /* @__PURE__ */ jsx9("div", { className: "project-highlight flex flex-col sm:flex-row gap-8", children: projectInfo.map((category) => /* @__PURE__ */ jsx9(ProjectCard, { category }, category.title)) })
 ] });
@@ -630,7 +640,17 @@ var CartridgeShowcase = () => /* @__PURE__ */ jsx10("section", { className: "car
         /* @__PURE__ */ jsx10("p", { className: "text-[var(--muted)] text-lg", style: { fontFamily: "var(--mono)", fontSize: ".85rem", letterSpacing: ".03em" }, children: "Mobile Game Logging App \xB7 Personal Project" })
       ] }),
       /* @__PURE__ */ jsx10("ul", { className: "list-none space-y-4 mb-6", children: highlights.map((highlight) => /* @__PURE__ */ jsx10("li", { className: "text-[var(--muted)] leading-relaxed pl-6 relative before:content-['\u2192'] before:absolute before:left-0 before:text-[var(--petrol)] before:font-bold", children: highlight }, highlight)) }),
-      /* @__PURE__ */ jsx10("div", { className: "flex flex-wrap gap-2", children: techStack.map((tech) => /* @__PURE__ */ jsx10("span", { className: "chip", children: tech }, tech)) })
+      /* @__PURE__ */ jsx10("div", { className: "flex flex-wrap gap-2", children: techStack.map((tech) => /* @__PURE__ */ jsx10("span", { className: "chip", children: tech }, tech)) }),
+      /* @__PURE__ */ jsx10(
+        "a",
+        {
+          className: "repo-link",
+          href: "https://github.com/rweir4/cartridge",
+          target: "_blank",
+          rel: "noopener noreferrer",
+          children: "View on GitHub \u2192"
+        }
+      )
     ] }),
     /* @__PURE__ */ jsx10(ScreenshotCarousel, {})
   ] }) })
