@@ -244,7 +244,7 @@ var Experience = () => {
     ] }),
     /* @__PURE__ */ jsxs2("div", { className: "section-head", id: "experience", children: [
       /* @__PURE__ */ jsx3("span", { className: "eyebrow", children: "Timeline" }),
-      /* @__PURE__ */ jsx3("h2", { className: "section-title", children: "Past Experience" })
+      /* @__PURE__ */ jsx3("h2", { className: "section-title", children: "Full Work History" })
     ] }),
     /* @__PURE__ */ jsx3("div", { className: "timeline", children: EXPERIENCES.map((exp, index) => /* @__PURE__ */ jsxs2("div", { className: "tl-item", children: [
       /* @__PURE__ */ jsxs2("div", { className: "tl-idx", children: [

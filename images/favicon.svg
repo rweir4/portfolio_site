@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- petrol tile, matching the wordmark accent -->
+  <rect width="32" height="32" rx="7" fill="#0C6B75"/>
+  <!-- faint inner edge, echoing the glass inset highlight used site wide -->
+  <rect x="1.75" y="1.75" width="28.5" height="28.5" rx="5.5"
+        fill="none" stroke="#FBFBF9" stroke-opacity=".28" stroke-width="1"/>
+  <!-- serif R to match the Fraunces wordmark; Fraunces itself cannot load
+       inside a favicon, so this falls back to the system serif -->
+  <text x="16" y="16.5" text-anchor="middle" dominant-baseline="central"
+        font-family="Georgia, 'Times New Roman', serif" font-weight="600"
+        font-size="21" fill="#FBFBF9">R</text>
+</svg>

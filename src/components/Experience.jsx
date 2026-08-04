@@ -58,7 +58,7 @@ const Experience = () => {
         
         <div className="section-head" id="experience">
           <span className="eyebrow">Timeline</span>
-          <h2 className="section-title">Past Experience</h2>
+          <h2 className="section-title">Full Work History</h2>
         </div>
         <div className="timeline">
           {EXPERIENCES.map((exp, index) => (
