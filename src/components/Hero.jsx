@@ -1,5 +1,12 @@
 import ChatbotWidget from './ChatbotWidget';
 
+// The characterization strip under the CTAs — each cell is one measured fact.
+const READOUT = [
+  { num: '8+',      lab: 'Years shipping' },
+  { num: '13M+',    lab: 'Vimeo users served' },
+  { num: 'VA.gov',  lab: 'Currently building' },
+];
+
 const Hero = () => (
   <section className="hero">
     <div className="hero-inner">
@@ -15,18 +22,12 @@ const Hero = () => (
           <a href="#work" className="btn btn-ghost">View selected work</a>
         </div>
         <div className="readout glass rise d4">
-          <div className="cell">
-            <span className="num">8+</span>
-            <span className="lab">Years shipping</span>
-          </div>
-          <div className="cell">
-            <span className="num">13M+</span>
-            <span className="lab">Vimeo users served</span>
-          </div>
-          <div className="cell">
-            <span className="num">VA.gov</span>
-            <span className="lab">Currently building</span>
-          </div>
+          {READOUT.map(({ num, lab }) => (
+            <div className="cell" key={lab}>
+              <span className="num">{num}</span>
+              <span className="lab">{lab}</span>
+            </div>
+          ))}
         </div>
       </div>
       <div className="hero-figure rise d3">

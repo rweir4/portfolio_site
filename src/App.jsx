@@ -11,7 +11,10 @@ const Header = () => (
   <header className="header">
     <div className="container">
       <div className="nav-in glass">
-        <a href="#top" className="wordmark">Rebecca <b>Weir</b></a>
+        <a href="#top" className="wordmark">
+          Rebecca <b>Weir</b>
+          <span className="wordmark-role">Senior Fullstack Software Engineer</span>
+        </a>
         <nav className="nav-links">
           <a href="#work">Work</a>
           <a href="#about">About</a>

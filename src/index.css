@@ -130,8 +130,16 @@ body {
 .wordmark {
   font-family: var(--serif); font-weight: 600; font-size: 1.35rem;
   letter-spacing: .01em; color: var(--ink); text-decoration: none;
+  display: inline-flex; align-items: baseline; gap: .7rem;
 }
 .wordmark b { color: var(--petrol); font-weight: 600; }
+/* role tag rides the wordmark; the dash lives in CSS so it drops out with the label */
+.wordmark-role {
+  font-family: var(--mono); font-size: .7rem; font-weight: 400;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--meta);
+  white-space: nowrap;
+}
+.wordmark-role::before { content: "— "; }
 .nav-links { display: flex; gap: 1.4rem; align-items: center; }
 .nav-links a {
   font-family: var(--mono); font-size: .78rem; letter-spacing: .04em;
@@ -311,15 +319,33 @@ body {
 /* ============================================================
    About
    ============================================================ */
-.about-content { max-width: 760px; }
+/* prose keeps a readable measure; the credentials row spans the container */
+.about-text { max-width: 760px; }
 .about-text p { color: var(--muted); font-size: 1.08rem; line-height: 1.85; margin-bottom: 1.6rem; }
 .credentials { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.3rem; margin-top: 2.4rem; }
-.education, .awards { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 1.8rem; }
-.education h3, .awards h3 {
+.education, .awards, .research { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 1.8rem; }
+.education h3, .awards h3, .research h3 {
   font-family: var(--mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
   color: var(--petrol); margin-bottom: 1rem; font-weight: 500;
 }
-.education p, .awards p { color: var(--muted); font-size: .95rem; line-height: 1.6; margin-bottom: .6rem; }
+.education p, .awards p, .research p { color: var(--muted); font-size: .95rem; line-height: 1.6; margin-bottom: .6rem; }
+
+/* three citations need the full row - Education/Recognition sit above it */
+.research { grid-column: 1 / -1; }
+.pub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.7rem; }
+/* left rule per citation, echoing the hero readout's cell dividers */
+.pub { border-left: 1px solid var(--line); padding-left: 1.1rem; }
+.pub-meta {
+  font-family: var(--mono); font-size: .68rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--meta); margin-bottom: .45rem;
+}
+.pub-title { margin-bottom: .7rem; }
+.pub-link {
+  font-family: var(--mono); font-size: .8rem; color: var(--petrol);
+  text-decoration: none; border-bottom: 1px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+.pub-link:hover { color: var(--petrol-2); border-bottom-color: currentColor; }
 
 /* ============================================================
    Contact
@@ -343,6 +369,11 @@ body {
 /* ============================================================
    Responsive
    ============================================================ */
+/* the role tag is the first thing to go — it must never crowd the nav */
+@media (max-width: 940px) {
+  .wordmark-role { display: none; }
+}
+
 @media (max-width: 860px) {
   .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .hero-figure { max-width: 340px; }
@@ -359,7 +390,7 @@ body {
 
 @media (max-width: 480px) {
   .portfolio .container, .hero-inner, .project-showcase { padding-left: 1.25rem; padding-right: 1.25rem; }
-  .project-highlight, .education, .awards, .current-role-card { padding: 1.5rem; }
+  .project-highlight, .education, .awards, .research, .current-role-card { padding: 1.5rem; }
 }
 
 /* gentle load-in for the hero */

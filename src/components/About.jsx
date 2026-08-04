@@ -1,3 +1,5 @@
+import Research from './Research';
+
 const About = () => (
   <section id="about" className="about">
     <div className="container">
@@ -8,9 +10,9 @@ const About = () => (
             <h2 className="section-title">About Rebecca</h2>
           </div>
           <p>
-            I'm a software engineer with 8+ years of experience building scalable, 
-            user-focused applications. I've had the privilege of working at innovative companies like Vimeo and 
-            Medidata Solutions, where I've led teams, mentored engineers, and delivered 
+            I'm a software engineer with 8+ years of experience building scalable,
+            user-focused applications. I've had the privilege of working at innovative companies like Medidata
+            Solutions, Vimeo, and now Agile 6, where I've led teams, mentored engineers, and delivered
             systems that serve millions of users. I'm passionate about clean architecture, 
             performance optimization, and creating technology that makes a real difference.
           </p>
@@ -22,18 +24,21 @@ const About = () => (
             and building solutions that work at scale. It’s a perspective that helps me bring both 
             rigor and creativity to technical challenges.
           </p>
-          <div className="credentials">
-            <div className="education">
-              <h3>Education</h3>
-              <p>Bachelor of Science in Biochemistry And Cellular And Molecular Biology</p>
-              <p>University of Tennessee, Knoxville, TN</p>
-            </div>
-            <div className="awards">
-              <h3>Recognition</h3>
-              <p>Encore Award - For exceptional contribution to a high-impact, time-sensitive project</p>
-              <p>Pendo Partner Certification - Software management platform expertise</p>
-            </div>
+        </div>
+        {/* Sibling of .about-text, not a child - the prose keeps a 760px
+            measure while the cards span the full container width. */}
+        <div className="credentials">
+          <div className="education">
+            <h3>Education</h3>
+            <p>Bachelor of Science in Biochemistry And Cellular And Molecular Biology</p>
+            <p>University of Tennessee, Knoxville, TN</p>
           </div>
+          <div className="awards">
+            <h3>Recognition</h3>
+            <p>Encore Award - For exceptional contribution to a high-impact, time-sensitive project</p>
+            <p>Pendo Partner Certification - Software management platform expertise</p>
+          </div>
+          <Research />
         </div>
       </div>
     </div>
