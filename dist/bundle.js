@@ -57,24 +57,28 @@ var EXPERIENCES = [
     location: "Remote",
     highlights: [
       {
-        title: "VA.gov Financial Applications",
-        expandedBody: "Building large-scale financial applications for VA.gov as part of a distributed team, spanning the full stack from technical design through delivery."
+        title: "Payment History Modernization",
+        expandedBody: "Revived a two-year-stalled Payment History and Medical Copays modernization, redefining architecture for fresher payment data and legacy compatibility."
       },
       {
-        title: "Technical Leadership",
-        expandedBody: "Tech lead on a large initiative as well as on smaller efforts, setting technical direction and carrying work from design through delivery."
+        title: "Hardship Suspension Workflow",
+        expandedBody: "Built and launched hardship suspension workflow in React/JavaScript and Ruby on Rails for an urgent stakeholder deadline; led feature-flagged canary rollout through full release with zero production incidents."
       },
       {
-        title: "Architecture and API Contracts",
-        expandedBody: "Own architectural direction across API contracts, migration strategies, and technical design documents that guide the team's implementation."
+        title: "Pay.gov Integration",
+        expandedBody: "Technical lead for planned Pay.gov integration, defining secure service handoffs and data-freshness rules to keep debt resolution within VA.gov."
       },
       {
-        title: "Data Model Modernization",
-        expandedBody: "Modernizing legacy data models and the frontend interfaces built on them, serving millions of Veterans."
+        title: "Security Vulnerability Remediation",
+        expandedBody: "Identified and remediated critical security vulnerability in frontend-generated JSON used for backend database writes."
       },
       {
-        title: "Privacy, Security, and Reliability",
-        expandedBody: "Work under a constant focus on privacy, security, and reliability given the sensitivity of Veteran financial data."
+        title: "Encrypted Email Delivery",
+        expandedBody: "Reworked Sidekiq email delivery to replace timeout-prone cached PII with Lockbox encryption, removing sensitive data from job metadata and eliminating delivery failures."
+      },
+      {
+        title: "Engineering Standards",
+        expandedBody: "Raised team engineering standards through ADRs, design reviews, pairing, and feature-flagged releases, improving how work moved from technical planning through to production."
       }
     ]
   },
