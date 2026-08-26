@@ -4,6 +4,6 @@ This works on localhost, and is deployed on github pages.
 
 ## [Visit Site](https://rweir4.github.io/portfolio_site/)
 
-![HomePage Preview](./homepage-preview.png)
+![Rebecca Weir, Senior Fullstack Software Engineer](./images/og-card.png)
 
 Credit: Icons by Muhammad_Usman, IcoMania, Alfredo Hernandez, and Freepik on FlatIcon
